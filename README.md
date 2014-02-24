@@ -7,3 +7,6 @@ Prerequisites:
 - Must have Minecraft Forge 9.11.1.965 for Minecraft 1.6.4 workspace installed
 - Must have knowledge of the Java programming language
 - Must have experience with Minecraft Forge API
+
+To start:
+Copy the assets and atlantismod folders to your workspace. Now lets start modding!
