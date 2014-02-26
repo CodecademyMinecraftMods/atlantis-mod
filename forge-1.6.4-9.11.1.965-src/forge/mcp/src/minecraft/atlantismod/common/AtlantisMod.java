@@ -16,16 +16,17 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 public class AtlantisMod {
 
 	@Instance(value="AtlantisMod")
-	public static AtlantisMod instance;	
+	public static AtlantisMod instance;
 	@SidedProxy(clientSide="atlantismod.common.client.ClientProxy",serverSide="atlantismod.common.CommonProxy")
     public static CommonProxy proxy;
-	
+
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {}
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
+		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
 	}
 	
 	@EventHandler
