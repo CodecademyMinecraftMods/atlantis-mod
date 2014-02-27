@@ -45,7 +45,7 @@ public class AtlantisMod {
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
 
-		LanguageRegistry.addName(portalAtlantisBlock,"Portal Tutorial Block");
+		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");
 		
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
