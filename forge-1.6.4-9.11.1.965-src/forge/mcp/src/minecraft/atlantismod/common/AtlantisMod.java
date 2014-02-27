@@ -1,5 +1,6 @@
 package atlantismod.common;
 
+import api.player.client.ClientPlayerAPI;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -39,6 +40,7 @@ public class AtlantisMod {
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
+		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
 		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
