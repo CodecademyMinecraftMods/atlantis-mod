@@ -22,7 +22,7 @@ public class WorldGenAtlantis implements IWorldGenerator {
 		case 1:
 		    generateEnd(world, random, chunkX * 16, chunkZ * 16);
 		    break;
-		case 2:
+		case AtlantisMod.dimensionID:
 			generateAtlantis(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
