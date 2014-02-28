@@ -58,7 +58,10 @@ Copy the assets and atlantismod folders to your workspace. Now lets start moddin
  - Scuba Suit (chest)
  - Oxygen Tank (legs, wears out quickly)
  - Flippers (boots, speeds movement)
-
+ 
+ **Other**
+ - Small Atlantean submarine?
+ 
 **Structures**
  - Shipwreck
  - Atlantis City
