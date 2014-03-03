@@ -3,13 +3,15 @@ atlantis-mod
 
 Atlantis Dimension for Minecraft 1.6.4
 
-Prerequisites:
+**Prerequisites:**
 - Must have Minecraft Forge 9.11.1.965 for Minecraft 1.6.4 workspace installed
+- Must have Eclipse installed (Kepler)
 - Must have knowledge of the Java programming language
 - Must have experience with Minecraft Forge API
 
-To start:
-Copy the assets and atlantismod folders to your workspace. Now lets start modding!
+**To start:**
+- Copy the assets and atlantismod folders to your workspace.
+- Add "libraries/PlayerAPI.jar" to your classpath.
 
 **TODO:**
 - No teleporter block
@@ -60,7 +62,6 @@ Copy the assets and atlantismod folders to your workspace. Now lets start moddin
  - Flippers (boots, speeds movement)
  
  **Other**
- - Small Atlantean submarine?
  
 **Structures**
  - Shipwreck
