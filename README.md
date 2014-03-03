@@ -14,7 +14,7 @@ Atlantis Dimension for Minecraft 1.6.4
 - Add "libraries/PlayerAPI.jar" to your classpath.
 
 **TODO:**
-- Add creative tab (with pearl as img)
+- Add creative tab (with pearl as img) DONE
 - Mine fast underwater?
 - (Helmet) Diving Helmet: needs oxygen tank
 - (Chest) Scuba Suit: swim faster
@@ -44,7 +44,7 @@ Atlantis Dimension for Minecraft 1.6.4
 
 **Blocks**
  - Coral (has many subtypes of different colors)
- - Rotten Planks (for shipwreck, when mined drops sticks)
+ - Rotten Planks (for shipwreck, when mined drops sticks) DONE
  - Pearl Ore
  - Block of Pearl
  - Bubble Door (keeps out water, but you can still walk through it!)
@@ -57,7 +57,7 @@ Atlantis Dimension for Minecraft 1.6.4
  - Oxygen Tank (legs, wears out quickly)
  - Flippers (boots, speeds movement)
  
- **Other**
+**Other**
  
 **Structures**
  - Shipwreck
