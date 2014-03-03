@@ -19,6 +19,15 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
+/*
+ * 
+ * Atlantis Mod
+ * 
+ * @author Graeme22
+ * @author Lepreckaun
+ * 
+ * */
+
 @Mod(modid="AtlantisMod",name="Atlantis",version="1.1.1")
 @NetworkMod(clientSideRequired=true)
 public class AtlantisMod {
@@ -27,10 +36,6 @@ public class AtlantisMod {
 	public static AtlantisMod instance;
 	@SidedProxy(clientSide="atlantismod.common.client.ClientProxy",serverSide="atlantismod.common.CommonProxy")
     public static CommonProxy proxy;
-	
-	public AtlantisMod() {
-		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
-	}
 	
 	public static CreativeTabs tabAtlantis;
 	
@@ -43,6 +48,10 @@ public class AtlantisMod {
 	public static Item pearl, atlantisWand;
 	
 	public static Block blockCoral;
+	
+	public AtlantisMod() {
+		ClientPlayerAPI.register("AtlantisMod",AtlantisClientPlayerBase.class);
+	}
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -67,6 +76,8 @@ public class AtlantisMod {
 		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
+		
+		
 
 		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");
