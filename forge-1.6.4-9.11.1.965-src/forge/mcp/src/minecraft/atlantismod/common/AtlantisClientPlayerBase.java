@@ -12,13 +12,9 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
 		super(arg0);
 	}
 
-	public boolean canBreatheUnderwater(EntityPlayer player) {
-		ItemStack armor[] = player.inventory.armorInventory;
-		if(armor[0] == new ItemStack(Item.helmetDiamond)) {
-			return true;
-		} else {
-			return super.canBreatheUnderwater();
-		}
+	public boolean canBreatheUnderwater() {
+		/*player.inventory.armorItemInSlot(0);*/
+		return super.canBreatheUnderwater();
 	}
 	
 }

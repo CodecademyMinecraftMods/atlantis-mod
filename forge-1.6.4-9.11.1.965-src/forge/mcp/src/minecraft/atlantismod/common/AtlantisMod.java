@@ -6,6 +6,7 @@ import net.minecraft.block.BlockSand;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -26,28 +27,32 @@ public class AtlantisMod {
 	@SidedProxy(clientSide="atlantismod.common.client.ClientProxy",serverSide="atlantismod.common.CommonProxy")
     public static CommonProxy proxy;
 	
+	public AtlantisMod() {
+		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
+	}
+	
 	public static final int dimensionID = 22;
 
 	public static Block portalAtlantisBlock;
+
+	// lets keep it uniform; its more proper to init in the init function anyways
+	public static Block deepSandBlock;
+	
+	public static Block blockCoral;
 	
 	public static Item atlantisWand;
-	
-	/* I suppose you can do it either way, but I prefer to make blocks and stuff using this
-	 * method of putting it all in one spot |
-	 *                           		    V
-	 */
-	public final static Block deepSandBlock = new BlockSand(2224).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setTextureName("atlantismod:deep_sand");
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2223)).setUnlocalizedName("atlantisWand").setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
+
+		deepSandBlock = (new BlockSand(2224)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setTextureName("atlantismod:deep_sand");
 	}
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
-		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
 		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
