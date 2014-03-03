@@ -14,12 +14,8 @@ Atlantis Dimension for Minecraft 1.6.4
 - Add "libraries/PlayerAPI.jar" to your classpath.
 
 **TODO:**
-- No teleporter block
 - Add creative tab (with pearl as img)
 - Mine fast underwater?
-- Inventory is a public attribute of EntityPlayer
-- Wand texture update (yellow and light blue?)
-- PlayerAPI installation instructions
 - (Helmet) Diving Helmet: needs oxygen tank
 - (Chest) Scuba Suit: swim faster
 - (Legs) Oxygen Tank: w/ helmet can breath underwater, wears out slowly
@@ -71,6 +67,7 @@ Atlantis Dimension for Minecraft 1.6.4
  - Bubble 3 x 3 x 3
  - Grotto
  - Atlantean Ruins
+ - Sunken Submarine
 
 **Decorations**
  - Coral
