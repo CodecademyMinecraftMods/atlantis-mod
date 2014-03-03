@@ -32,28 +32,17 @@ public class AtlantisMod {
 		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
 	}
 	
-	//Atlantis Mod Creative tab
-	public static CreativeTabs tabAtlantis = new CreativeTabs("tabAtlantis") {
-		public ItemStack getIconItemStack() {
-			return new ItemStack(AtlantisMod.pearl.itemID, 1, 0);
-		}
-	};
-	//Atlantis Mod Creative tab end
+	public static CreativeTabs tabAtlantis;
 	
 	public static final int dimensionID = 22;
 
 	public static Block portalAtlantisBlock;
 
-	// lets keep it uniform; its more proper to init in the init function anyways
-	public static Block deepSandBlock;
-	
-	public static Block rottenPlanksBlock;
+	public static Block deepSandBlock, rottenPlanksBlock;
 
-	public static Item pearl;
+	public static Item pearl, atlantisWand;
 	
 	public static Block blockCoral;
-	
-	public static Item atlantisWand;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -62,7 +51,14 @@ public class AtlantisMod {
 
 		deepSandBlock = (new BlockSand(2224)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
 		rottenPlanksBlock = (new BlockRottenPlanks(2225)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
-		pearl = (new ItemPearl(2226).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl"));
+		
+		pearl = (new Item(2226)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
+		
+		tabAtlantis = new CreativeTabs("tabAtlantis") {
+			public ItemStack getIconItemStack() {
+				return new ItemStack(AtlantisMod.pearl.itemID, 1, 0);
+			}
+		};
 	}
 	
 	@EventHandler
@@ -75,32 +71,23 @@ public class AtlantisMod {
 		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");
 
-		//Pearl registry
 		GameRegistry.registerItem(pearl, "pearl");
 		LanguageRegistry.addName(pearl, "Pearl");
-		//Pearl registry end
 
-		//Rotten Planks registry
 		GameRegistry.registerBlock(rottenPlanksBlock,"rottenPlanksBlock");
 		LanguageRegistry.addName(rottenPlanksBlock, "Rotten Planks");
 		MinecraftForge.setBlockHarvestLevel(rottenPlanksBlock, "axe", 1);
-		//Rotten Planks registry end
 		
-		//Deep Sand Registry
 		GameRegistry.registerBlock(deepSandBlock,"deepSandBlock");
 		LanguageRegistry.addName(deepSandBlock,"Deep Sand");
 		MinecraftForge.setBlockHarvestLevel(deepSandBlock, "shovel", 1);
-		//Deep Sand Registry end
 		
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
 		GameRegistry.registerItem(atlantisWand,"atlantisWand");
 		
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.stick);
 
-		//Atlantis Creative tab
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabAtlantis", "en_US", "Atlantis Mod");
-		//Atlantis Creative tab end
-
 	}
 	
 	@EventHandler

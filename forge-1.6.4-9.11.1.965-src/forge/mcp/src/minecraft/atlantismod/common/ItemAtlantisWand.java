@@ -19,7 +19,7 @@ public class ItemAtlantisWand extends Item {
 	
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World, int par4, int par5, int par6, int par7, float par8, float par9, float par10) {
 		if(par2EntityPlayer instanceof EntityPlayerMP) {
-			if(rand.nextInt(5) == 1) par2EntityPlayer.inventory.setInventorySlotContents(par2EntityPlayer.inventory.currentItem, (ItemStack)null);
+			if(rand.nextInt(5) == 1) par2EntityPlayer.inventory.setInventorySlotContents(par2EntityPlayer.inventory.currentItem, (ItemStack)(null));
 			EntityPlayerMP player = (EntityPlayerMP) par2EntityPlayer;
 			MinecraftServer server = MinecraftServer.getServer();
 			if(player.dimension != AtlantisMod.dimensionID) {

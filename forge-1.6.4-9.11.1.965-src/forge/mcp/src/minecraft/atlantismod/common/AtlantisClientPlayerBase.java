@@ -8,13 +8,13 @@ import api.player.client.ClientPlayerBase;
 
 public class AtlantisClientPlayerBase extends ClientPlayerBase {
 
-	public AtlantisClientPlayerBase(ClientPlayerAPI arg0) {
-		super(arg0);
+	public AtlantisClientPlayerBase(ClientPlayerAPI playerAPI) {
+		super(playerAPI);
 	}
 
-	public boolean canBreatheUnderwater() {
-		/*player.inventory.armorItemInSlot(0);*/
+	/*public boolean canBreatheUnderwater() {
+		player.inventory.armorItemInSlot(0);
 		return super.canBreatheUnderwater();
-	}
+	}*/
 	
 }
