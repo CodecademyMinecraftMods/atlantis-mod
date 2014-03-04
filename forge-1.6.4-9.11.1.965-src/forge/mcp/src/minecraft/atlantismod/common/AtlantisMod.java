@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,12 +20,43 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-/*
+/**
  * 
  * Atlantis Mod
  * 
  * @author Graeme22
  * @author Lepreckaun
+ * 
+ * */
+
+/**
+ * "The Deep"
+ * Squidman
+ * Giant Squid
+ * Angler Fish
+ * Whale
+ * Kraken
+ * Eels
+ * Shark
+ * Sharkman
+ * Many colors of fish
+ * Mermaid
+ * Coral (has many subtypes of different colors)
+ * Pearl Ore
+ * Block of Pearl
+ * Trident (can be thrown by right-clicking)
+ * Shipwreck
+ * Atlantis City
+ * Coral Reef
+ * Bubble 2 x 2 x 2
+ * Bubble 3 x 3 x 3
+ * Grotto
+ * Atlantean Ruins
+ * Sunken Submarine
+ * Glowstone
+ * Deep Ocean
+ * King of Atlantis
+ * Neptune
  * 
  * */
 
@@ -47,11 +79,9 @@ public class AtlantisMod {
 
 	public static Item pearl, atlantisWand;
 	
-	public static Block blockCoral;
+	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
 	
-	public AtlantisMod() {
-		ClientPlayerAPI.register("AtlantisMod",AtlantisClientPlayerBase.class);
-	}
+	public static Block blockCoral;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
@@ -77,7 +107,7 @@ public class AtlantisMod {
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
 		
-		
+		ClientPlayerAPI.register("AtlantisMod",AtlantisClientPlayerBase.class);
 
 		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");

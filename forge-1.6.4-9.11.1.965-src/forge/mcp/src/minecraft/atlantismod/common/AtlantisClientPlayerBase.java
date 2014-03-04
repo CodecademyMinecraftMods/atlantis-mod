@@ -11,7 +11,7 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
 
 	public boolean canBreatheUnderwater() {
 		//player.inventory.armorInventory[0];
-		return super.canBreatheUnderwater();
+		return true;
 	}
 	
 }
