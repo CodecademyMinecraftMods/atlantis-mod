@@ -4,10 +4,13 @@ import api.player.client.ClientPlayerAPI;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -69,15 +72,20 @@ public class AtlantisMod {
 	@SidedProxy(clientSide="atlantismod.common.client.ClientProxy",serverSide="atlantismod.common.CommonProxy")
     public static CommonProxy proxy;
 	
-	public static CreativeTabs tabAtlantis;
-	
 	public static final int dimensionID = 22;
+	
+	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{1,1,0,0},0);
+	private static EnumToolMaterial PearlTool = EnumHelper.addToolMaterial("PEARLTOOL",3,1111,7.0F,2.5F,20);
+	
+	public static CreativeTabs tabAtlantis;
 
 	public static Block portalAtlantisBlock;
 
 	public static Block deepSandBlock, rottenPlanksBlock;
 
-	public static Item pearl, atlantisWand;
+	public static Item pearl, atlantisWand, trident;
+	
+	public static Block orePearl, blockPearl;
 	
 	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
 	
@@ -85,19 +93,31 @@ public class AtlantisMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
-		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2223)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
-
-		deepSandBlock = (new BlockSand(2224)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
-		rottenPlanksBlock = (new BlockRottenPlanks(2225)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
-		
-		pearl = (new Item(2226)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
-		
 		tabAtlantis = new CreativeTabs("tabAtlantis") {
 			public ItemStack getIconItemStack() {
 				return new ItemStack(AtlantisMod.pearl.itemID, 1, 0);
 			}
 		};
+		
+		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
+		
+		deepSandBlock = (new BlockSand(2223)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
+		rottenPlanksBlock = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
+
+		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
+		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
+		//trident = (new ItemTrident());
+		
+		//orePearl
+		//blockPearl
+		
+		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0));
+		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2228,AtlantisMod.DivingSuit,0,1));
+		oxygenTank = (ItemDivingArmor)(new ItemDivingArmor(2229,AtlantisMod.DivingSuit,0,2)).setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("oxygenTank").setTextureName("atlantismod:oxygen_tank");
+		flippers = (ItemDivingArmor)(new ItemDivingArmor(2230,AtlantisMod.DivingSuit,0,3));
+		
+		//blockCoral
+		
 	}
 	
 	@EventHandler

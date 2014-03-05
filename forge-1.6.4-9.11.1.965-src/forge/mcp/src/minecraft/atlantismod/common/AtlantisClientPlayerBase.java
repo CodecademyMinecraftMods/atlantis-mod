@@ -11,8 +11,11 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
 
 	@Override
 	public boolean canBreatheUnderwater() {
-		//player.inventory.armorInventory[0];
-		return true;
+		if(player.inventory.armorInventory[0].getItem().itemID == AtlantisMod.divingHelmet.itemID && player.inventory.armorInventory[2].getItem().itemID == AtlantisMod.oxygenTank.itemID) {
+			player.inventory.armorInventory[2].damageItem(1,player);
+			return true;
+		}
+		return super.canBreatheUnderwater();
 	}
 	
 }
