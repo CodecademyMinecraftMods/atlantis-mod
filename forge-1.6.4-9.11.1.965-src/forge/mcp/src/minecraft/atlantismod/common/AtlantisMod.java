@@ -89,7 +89,7 @@ public class AtlantisMod {
 	
 	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
 	
-	public static Block blockCoral;
+	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
 	public AtlantisMod() {
 		ClientPlayerAPI.register("AtlantisMod",AtlantisClientPlayerBase.class);
@@ -115,12 +115,16 @@ public class AtlantisMod {
 		//orePearl
 		//blockPearl
 		
-		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0));
-		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2228,AtlantisMod.DivingSuit,0,1));
+		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("divingHelmet").setTextureName("atlantismod:diving_helmet");
+		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2228,AtlantisMod.DivingSuit,0,1)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("scubaSuit").setTextureName("atlantismod:scuba_suit");
 		oxygenTank = (ItemDivingArmor)(new ItemDivingArmor(2229,AtlantisMod.DivingSuit,0,2)).setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("oxygenTank").setTextureName("atlantismod:oxygen_tank");
-		flippers = (ItemDivingArmor)(new ItemDivingArmor(2230,AtlantisMod.DivingSuit,0,3));
+		flippers = (ItemDivingArmor)(new ItemDivingArmor(2230,AtlantisMod.DivingSuit,0,3)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("flippers").setTextureName("atlantismod:flippers");
 		
-		//blockCoral
+		blockCoralOrange = (new BlockCoral(2231)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralOrange").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:orange_coral");
+		blockCoralGreen = (new BlockCoral(2232)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralGreen").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:green_coral");
+		blockCoralRed = (new BlockCoral(2233)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralRed").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:red_coral");
+		blockCoralPurple = (new BlockCoral(2234)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralPurple").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:purple_coral");
+		blockCoralYellow = (new BlockCoral(2235)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralYellow").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:yellow_coral");
 		
 	}
 	
@@ -147,6 +151,17 @@ public class AtlantisMod {
 		
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
 		GameRegistry.registerItem(atlantisWand,"atlantisWand");
+		
+		GameRegistry.registerBlock(blockCoralOrange,"blockCoralOrange");
+		LanguageRegistry.addName(blockCoralOrange,"Orange Coral");
+		GameRegistry.registerBlock(blockCoralGreen,"blockCoralGreen");
+		LanguageRegistry.addName(blockCoralGreen,"Green Coral");
+		GameRegistry.registerBlock(blockCoralRed,"blockCoralRed");
+		LanguageRegistry.addName(blockCoralRed,"Red Coral");
+		GameRegistry.registerBlock(blockCoralPurple,"blockCoralPurple");
+		LanguageRegistry.addName(blockCoralPurple,"Purple Coral");
+		GameRegistry.registerBlock(blockCoralYellow,"blockCoralYellow");
+		LanguageRegistry.addName(blockCoralYellow,"Yellow Coral");
 		
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.stick);
 
