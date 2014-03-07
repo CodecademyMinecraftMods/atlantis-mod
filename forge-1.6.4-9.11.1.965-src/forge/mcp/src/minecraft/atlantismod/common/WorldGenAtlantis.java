@@ -2,6 +2,8 @@ package atlantismod.common;
 
 import java.util.Random;
 
+import atlantismod.common.structures.WorldGenBubble2;
+import atlantismod.common.structures.WorldGenBubble3;
 import atlantismod.common.structures.WorldGenReef1;
 import atlantismod.common.structures.WorldGenReef2;
 import atlantismod.common.structures.WorldGenReef3;
@@ -33,19 +35,11 @@ public class WorldGenAtlantis implements IWorldGenerator {
 
 	private void generateAtlantis(World world, Random random, int i, int j) {
 		if(random.nextInt(75) == 1) (new WorldGenShipwreck()).generate(world, random, i, random.nextInt(60), j);
-		switch(random.nextInt(4)) {
-		case 1:
-			(new WorldGenReef1()).generate(world, random, i, random.nextInt(60), j);
-			break;
-		case 2:
-			(new WorldGenReef2()).generate(world, random, i, random.nextInt(60), j);
-			break;
-		case 3:
-			(new WorldGenReef3()).generate(world, random, i, random.nextInt(60), j);
-			break;
-		default:
-			break;
-		}
+		(new WorldGenReef1()).generate(world, random, i, random.nextInt(60), j);
+		(new WorldGenReef2()).generate(world, random, i, random.nextInt(60), j);
+		(new WorldGenReef3()).generate(world, random, i, random.nextInt(60), j);
+		for(int x=0;x<=5;x++) (new WorldGenBubble2()).generate(world, random, i, random.nextInt(60), j);
+		(new WorldGenBubble3()).generate(world, random, i, random.nextInt(60), j);
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {}

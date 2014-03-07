@@ -48,11 +48,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * Pearl Ore
  * Block of Pearl
  * Trident (can be thrown by right-clicking)
- * Shipwreck
  * Atlantis City
- * Coral Reef
- * Bubble 2 x 2 x 2
- * Bubble 3 x 3 x 3
  * Grotto
  * Atlantean Ruins
  * Sunken Submarine
@@ -84,6 +80,8 @@ public class AtlantisMod {
 	public static Block deepSandBlock, blockRottenPlanks;
 
 	public static Item pearl, atlantisWand, trident;
+	
+	public static Item swordPearl, pickaxePearl, shovelPearl, hoePearl, axePearl;
 	
 	public static Block orePearl, blockPearl;
 	
