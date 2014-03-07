@@ -2,13 +2,20 @@ package atlantismod.common;
 
 import api.player.client.ClientPlayerAPI;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockOre;
+import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
+import net.minecraft.item.ItemAxe;
+import net.minecraft.item.ItemHoe;
+import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -71,6 +78,7 @@ public class AtlantisMod {
 	
 	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{1,1,0,0},0);
 	private static EnumToolMaterial PearlTool = EnumHelper.addToolMaterial("PEARLTOOL",3,1111,7.0F,2.5F,20);
+	private static EnumToolMaterial Trident = EnumHelper.addToolMaterial("TRIDENTTOOL",1,1000,1.0F,5.0F,8);
 	
 	public static CreativeTabs tabAtlantis;
 
@@ -106,11 +114,11 @@ public class AtlantisMod {
 		blockRottenPlanks = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
 
 		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
-		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
-		//trident = (new ItemTrident());
+		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand");
+		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
 		
-		//orePearl
-		//blockPearl
+		orePearl = (new BlockOre(2236)).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("orePearl").setTextureName("atlantismod:pearl_ore").setCreativeTab(AtlantisMod.tabAtlantis);
+		blockPearl = (new BlockOrePearl(2237)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockPearl").setTextureName("atlantismod:pearl_block").setCreativeTab(AtlantisMod.tabAtlantis);
 		
 		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("divingHelmet").setTextureName("atlantismod:diving_helmet");
 		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2228,AtlantisMod.DivingSuit,0,1)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("scubaSuit").setTextureName("atlantismod:scuba_suit");
@@ -123,6 +131,11 @@ public class AtlantisMod {
 		blockCoralPurple = (new BlockCoral(2234)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralPurple").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:purple_coral");
 		blockCoralYellow = (new BlockCoral(2235)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralYellow").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:yellow_coral");
 		
+		axePearl = (new ItemAxe(2239,AtlantisMod.PearlTool)).setUnlocalizedName("axePearl").setTextureName("atlantismod:pearl_axe").setCreativeTab(AtlantisMod.tabAtlantis);
+		pickaxePearl = (new ItemPickaxe(2240,AtlantisMod.PearlTool)).setUnlocalizedName("pickaxePearl").setTextureName("atlantismod:pearl_pickaxe").setCreativeTab(AtlantisMod.tabAtlantis);
+		hoePearl = (new ItemHoe(2241,AtlantisMod.PearlTool)).setUnlocalizedName("hoePearl").setTextureName("atlantismod:pearl_hoe").setCreativeTab(AtlantisMod.tabAtlantis);
+		shovelPearl = (new ItemSpade(2242,AtlantisMod.PearlTool)).setUnlocalizedName("shovelPearl").setTextureName("atlantismod:pearl_shovel").setCreativeTab(AtlantisMod.tabAtlantis);
+		swordPearl = (new ItemSword(2243,AtlantisMod.PearlTool)).setUnlocalizedName("swordPearl").setTextureName("atlantismod:pearl_sword").setCreativeTab(AtlantisMod.tabAtlantis);
 	}
 	
 	@EventHandler
@@ -135,8 +148,11 @@ public class AtlantisMod {
 		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");
 
-		GameRegistry.registerItem(pearl, "pearl");
 		LanguageRegistry.addName(pearl, "Pearl");
+		GameRegistry.registerItem(pearl, "pearl");
+		
+		LanguageRegistry.addName(trident, "Trident");
+		GameRegistry.registerItem(trident, "trident");
 
 		GameRegistry.registerBlock(blockRottenPlanks,"blockRottenPlanks");
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
@@ -149,6 +165,14 @@ public class AtlantisMod {
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
 		GameRegistry.registerItem(atlantisWand,"atlantisWand");
 		
+		LanguageRegistry.addName(orePearl, "Pearl Ore");
+		GameRegistry.registerBlock(orePearl, "orePearl");
+		MinecraftForge.setBlockHarvestLevel(orePearl, "pickaxe", 2);
+		
+		LanguageRegistry.addName(blockPearl, "Block of Pearl");
+		GameRegistry.registerBlock(blockPearl, "blockPearl");
+		MinecraftForge.setBlockHarvestLevel(blockPearl, "pickaxe", 2);
+		
 		GameRegistry.registerBlock(blockCoralOrange,"blockCoralOrange");
 		LanguageRegistry.addName(blockCoralOrange,"Orange Coral");
 		GameRegistry.registerBlock(blockCoralGreen,"blockCoralGreen");
@@ -159,6 +183,17 @@ public class AtlantisMod {
 		LanguageRegistry.addName(blockCoralPurple,"Purple Coral");
 		GameRegistry.registerBlock(blockCoralYellow,"blockCoralYellow");
 		LanguageRegistry.addName(blockCoralYellow,"Yellow Coral");
+		
+		LanguageRegistry.addName(axePearl, "Pearl Axe");
+		GameRegistry.registerItem(axePearl, "axePearl");
+		LanguageRegistry.addName(pickaxePearl, "Pearl Pickaxe");
+		GameRegistry.registerItem(pickaxePearl, "pickaxePearl");
+		LanguageRegistry.addName(hoePearl, "Pearl Hoe");
+		GameRegistry.registerItem(hoePearl, "hoePearl");
+		LanguageRegistry.addName(shovelPearl, "Pearl Shovel");
+		GameRegistry.registerItem(shovelPearl, "shovelPearl");
+		LanguageRegistry.addName(swordPearl, "Pearl Sword");
+		GameRegistry.registerItem(swordPearl, "swordPearl");
 		
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.stick);
 
