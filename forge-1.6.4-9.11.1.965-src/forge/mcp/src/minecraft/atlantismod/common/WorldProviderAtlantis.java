@@ -13,7 +13,7 @@ public class WorldProviderAtlantis extends WorldProvider {
 	}
 	
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.ocean, 0.4F, 0.6F);
+		this.worldChunkMgr = new WorldChunkManagerHell(BiomeGenBase.ocean, -1.0F, 1.0F);
 		this.dimensionId = AtlantisMod.dimensionID;
 	}
 	

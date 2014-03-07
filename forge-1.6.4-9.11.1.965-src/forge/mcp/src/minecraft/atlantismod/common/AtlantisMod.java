@@ -44,7 +44,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * Sharkman
  * Many colors of fish
  * Mermaid
- * Coral (has many subtypes of different colors)
  * Pearl Ore
  * Block of Pearl
  * Trident (can be thrown by right-clicking)

@@ -34,12 +34,12 @@ public class WorldGenAtlantis implements IWorldGenerator {
 	}
 
 	private void generateAtlantis(World world, Random random, int i, int j) {
-		if(random.nextInt(75) == 1) (new WorldGenShipwreck()).generate(world, random, i, random.nextInt(60), j);
-		(new WorldGenReef1()).generate(world, random, i, random.nextInt(60), j);
-		(new WorldGenReef2()).generate(world, random, i, random.nextInt(60), j);
-		(new WorldGenReef3()).generate(world, random, i, random.nextInt(60), j);
-		for(int x=0;x<=5;x++) (new WorldGenBubble2()).generate(world, random, i, random.nextInt(60), j);
-		(new WorldGenBubble3()).generate(world, random, i, random.nextInt(60), j);
+		if(random.nextInt(40) == 1) (new WorldGenShipwreck()).generate(world, random, i, 60, j);
+		(new WorldGenReef1()).generate(world, random, i, 60, j);
+		(new WorldGenReef2()).generate(world, random, i, 60, j);
+		(new WorldGenReef3()).generate(world, random, i, 60, j);
+		for(int x=0;x<=5;x++) (new WorldGenBubble2()).generate(world, random, i, 60, j);
+		(new WorldGenBubble3()).generate(world, random, i, 60, j);
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {}

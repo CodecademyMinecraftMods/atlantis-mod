@@ -15,8 +15,9 @@ public class WorldGenShipwreck extends WorldGenerator {
 
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		j -= 11;
-		if(LocationIsValidSpawn(world, i, j + 14, k) && LocationIsValidSpawn(world, i + 18, j + 14, k) && LocationIsValidSpawn(world, i + 18, j + 14, k + 35) && LocationIsValidSpawn(world, i, j + 14, k + 35)) {
+		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
+		j++;
+		if(LocationIsValidSpawn(world, i, j, k) && LocationIsValidSpawn(world, i, j + 14, k)) {
 			
 			world.setBlock(i + 0, j + 2, k + 14, Block.fence.blockID);
 			world.setBlock(i + 0, j + 2, k + 15, Block.fence.blockID);
@@ -924,7 +925,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 14, j + 6, k + 31, AtlantisMod.blockRottenPlanks.blockID);
 			world.setBlock(i + 14, j + 6, k + 32, AtlantisMod.blockRottenPlanks.blockID);
 			world.setBlock(i + 14, j + 7, k + 2, AtlantisMod.blockRottenPlanks.blockID);
-			world.setBlock(i + 14, j + 7, k + 31, Block.chest.blockID, 2, 2);
+			(new WorldGenAtlantisChest(4)).generate(world, rand, i+14, j+7, k+31);
 			world.setBlock(i + 14, j + 7, k + 32, AtlantisMod.blockRottenPlanks.blockID);
 			world.setBlock(i + 14, j + 8, k + 2, AtlantisMod.blockRottenPlanks.blockID);
 			world.setBlock(i + 14, j + 8, k + 32, AtlantisMod.blockRottenPlanks.blockID);

@@ -14,8 +14,9 @@ public class WorldGenReef2 extends WorldGenerator {
 	}
 
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		j -= 11;
-		if(LocationIsValidSpawn(world, i, j+5, k) && LocationIsValidSpawn(world, i + 18, j+5, k) && LocationIsValidSpawn(world, i + 18, j+5, k + 20) && LocationIsValidSpawn(world, i, j+5, k + 20)) {
+		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
+		j++;
+		if(LocationIsValidSpawn(world, i, j, k)) {
 
 			world.setBlock(i + 3, j + 0, k + 11, AtlantisMod.blockCoralOrange.blockID);
 			world.setBlock(i + 4, j + 0, k + 11, AtlantisMod.blockCoralOrange.blockID);
