@@ -9,7 +9,7 @@
 
 
 
-package net.minecraft.src;
+/*package net.minecraft.src;
 
 @SideOnly(Side.CLIENT)
 public class ModelSquidman extends ModelBase
@@ -136,4 +136,4 @@ public class ModelSquidman extends ModelBase
     super.setRotationAngles(f, f1, f2, f3, f4, f5);
   }
 
-}
+}*/

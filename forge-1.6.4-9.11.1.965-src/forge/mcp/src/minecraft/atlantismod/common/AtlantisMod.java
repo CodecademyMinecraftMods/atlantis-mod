@@ -81,7 +81,7 @@ public class AtlantisMod {
 
 	public static Block portalAtlantisBlock;
 
-	public static Block deepSandBlock, rottenPlanksBlock;
+	public static Block deepSandBlock, blockRottenPlanks;
 
 	public static Item pearl, atlantisWand, trident;
 	
@@ -106,7 +106,7 @@ public class AtlantisMod {
 		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
 		
 		deepSandBlock = (new BlockSand(2223)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
-		rottenPlanksBlock = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
+		blockRottenPlanks = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
 
 		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
@@ -141,9 +141,9 @@ public class AtlantisMod {
 		GameRegistry.registerItem(pearl, "pearl");
 		LanguageRegistry.addName(pearl, "Pearl");
 
-		GameRegistry.registerBlock(rottenPlanksBlock,"rottenPlanksBlock");
-		LanguageRegistry.addName(rottenPlanksBlock, "Rotten Planks");
-		MinecraftForge.setBlockHarvestLevel(rottenPlanksBlock, "axe", 1);
+		GameRegistry.registerBlock(blockRottenPlanks,"blockRottenPlanks");
+		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
+		MinecraftForge.setBlockHarvestLevel(blockRottenPlanks, "axe", 1);
 		
 		GameRegistry.registerBlock(deepSandBlock,"deepSandBlock");
 		LanguageRegistry.addName(deepSandBlock,"Deep Sand");

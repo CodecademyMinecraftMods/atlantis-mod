@@ -9,7 +9,7 @@
 
 
 
-package net.minecraft.src;
+/*package net.minecraft.src;
 
 public class ModelFish extends ModelBase
 {
@@ -88,4 +88,4 @@ public class ModelFish extends ModelBase
     super.setRotationAngles(f, f1, f2, f3, f4, f5);
   }
 
-}
+}*/

@@ -14,12 +14,6 @@ Atlantis Dimension for Minecraft 1.6.4
 - Add "libraries/PlayerAPI.jar" to your classpath.
 
 **TODO:**
-- Mine fast underwater?
-- (Helmet) Diving Helmet: needs oxygen tank
-- (Chest) Scuba Suit: swim faster
-- (Legs) Oxygen Tank: w/ helmet can breath underwater, wears out slowly
-- (Boots) Flippers: swim faster
-
 
 **Frameworks**
  - PlayerAPI  Core 1.1 http://www.minecraftforum.net/topic/738498-172api-player-api/
