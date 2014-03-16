@@ -17,7 +17,6 @@ public class WorldGenReef1 extends WorldGenerator {
 		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
 		j++;
 		if(LocationIsValidSpawn(world, i, j, k)) {
-			
 			world.setBlock(i + 0, j + 0, k + 5, AtlantisMod.blockCoralRed.blockID);
 			world.setBlock(i + 0, j + 0, k + 6, AtlantisMod.blockCoralRed.blockID);
 			world.setBlock(i + 1, j + 0, k + 4, AtlantisMod.blockCoralRed.blockID);
@@ -296,7 +295,6 @@ public class WorldGenReef1 extends WorldGenerator {
 			world.setBlock(i + 14, j + 2, k + 10, AtlantisMod.blockCoralRed.blockID);
 			world.setBlock(i + 14, j + 2, k + 11, AtlantisMod.blockCoralRed.blockID);
 			world.setBlock(i + 15, j + 0, k + 11, AtlantisMod.blockCoralRed.blockID);
-	
 			return true;
 		}
 		return false;

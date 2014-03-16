@@ -1,11 +1,13 @@
 package atlantismod.common;
 
-import api.player.client.ClientPlayerAPI;
+import api.player.server.ServerPlayerAPI;
+import atlantismod.common.entity.EntityAtlantisFish;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;
@@ -16,6 +18,7 @@ import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -29,6 +32,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.EntityRegistry;
 
 /**
  * 
@@ -36,32 +40,6 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
  * 
  * @author Graeme22
  * @author Lepreckaun
- * 
- * */
-
-/**
- * "The Deep"
- * Squidman
- * Giant Squid
- * Angler Fish
- * Whale
- * Kraken
- * Eels
- * Shark
- * Sharkman
- * Many colors of fish
- * Mermaid
- * Pearl Ore
- * Block of Pearl
- * Trident (can be thrown by right-clicking)
- * Atlantis City
- * Grotto
- * Atlantean Ruins
- * Sunken Submarine
- * Glowstone
- * Deep Ocean
- * King of Atlantis
- * Neptune
  * 
  * */
 
@@ -97,7 +75,7 @@ public class AtlantisMod {
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
 	public AtlantisMod() {
-		ClientPlayerAPI.register("AtlantisMod",AtlantisClientPlayerBase.class);
+		//register playerapi!
 	}
 	
 	@EventHandler
@@ -144,6 +122,10 @@ public class AtlantisMod {
 		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
+		
+		EntityRegistry.registerModEntity(EntityAtlantisFish.class,"Fish",1,this,40,1,true);
+		EntityRegistry.addSpawn(EntityAtlantisFish.class,10,3,5,EnumCreatureType.waterCreature,BiomeGenBase.ocean);
+		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Fish.name","Fish");
 
 		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");

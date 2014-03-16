@@ -4,6 +4,7 @@ import java.util.Random;
 
 import atlantismod.common.structures.WorldGenBubble2;
 import atlantismod.common.structures.WorldGenBubble3;
+import atlantismod.common.structures.WorldGenGlowstone;
 import atlantismod.common.structures.WorldGenReef1;
 import atlantismod.common.structures.WorldGenReef2;
 import atlantismod.common.structures.WorldGenReef3;
@@ -40,6 +41,7 @@ public class WorldGenAtlantis implements IWorldGenerator {
 		(new WorldGenReef3()).generate(world, random, i, 60, j);
 		for(int x=0;x<=5;x++) (new WorldGenBubble2()).generate(world, random, i, 60, j);
 		(new WorldGenBubble3()).generate(world, random, i, 60, j);
+		for(int x=0;x<=2;x++) (new WorldGenGlowstone()).generate(world, random, i, 60, j);
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {}
