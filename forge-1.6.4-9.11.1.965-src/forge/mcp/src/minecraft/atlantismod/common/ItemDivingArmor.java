@@ -12,9 +12,7 @@ public class ItemDivingArmor extends ItemArmor {
 	}
 
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
-		if (stack.itemID == AtlantisMod.oxygenTank.itemID) {
-			return "atlantismod:textures/models/armor/oxygen_tank.png";
-		}
+		if (stack.itemID == AtlantisMod.oxygenTank.itemID) return "";
 		return "atlantismod:textures/models/armor/diving_suit.png";
 	}
 }

@@ -1,5 +1,6 @@
 package atlantismod.common;
 
+import api.player.client.ClientPlayerAPI;
 import api.player.server.ServerPlayerAPI;
 import atlantismod.common.entity.EntityAtlantisFish;
 import net.minecraft.block.Block;
@@ -7,6 +8,7 @@ import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -54,7 +56,7 @@ public class AtlantisMod {
 	
 	public static final int dimensionID = 22;
 	
-	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{1,1,0,0},0);
+	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{2,2,0,0},0);
 	private static EnumToolMaterial PearlTool = EnumHelper.addToolMaterial("PEARLTOOL",3,1111,7.0F,2.5F,20);
 	private static EnumToolMaterial Trident = EnumHelper.addToolMaterial("TRIDENTTOOL",1,1000,1.0F,5.0F,8);
 	
@@ -66,16 +68,21 @@ public class AtlantisMod {
 
 	public static Item pearl, atlantisWand, trident;
 	
+	public static Item fishHead;
+	
 	public static Item swordPearl, pickaxePearl, shovelPearl, hoePearl, axePearl;
 	
-	public static Block orePearl, blockPearl;
+	public static Block blockPearl;
 	
 	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
 	
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
+	private static int fishID = 2222;
+	
 	public AtlantisMod() {
-		//register playerapi!
+		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
+		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);
 	}
 	
 	@EventHandler
@@ -95,7 +102,8 @@ public class AtlantisMod {
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand");
 		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
 		
-		orePearl = (new BlockOre(2236)).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("orePearl").setTextureName("atlantismod:pearl_ore").setCreativeTab(AtlantisMod.tabAtlantis);
+		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head").setUnlocalizedName("fishHead");
+		
 		blockPearl = (new BlockOrePearl(2237)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockPearl").setTextureName("atlantismod:pearl_block").setCreativeTab(AtlantisMod.tabAtlantis);
 		
 		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("divingHelmet").setTextureName("atlantismod:diving_helmet");
@@ -123,48 +131,47 @@ public class AtlantisMod {
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
 		
-		EntityRegistry.registerModEntity(EntityAtlantisFish.class,"Fish",1,this,40,1,true);
+		/*EntityRegistry.registerModEntity(EntityAtlantisFish.class,"Fish",1,this,40,3,true);
 		EntityRegistry.addSpawn(EntityAtlantisFish.class,10,3,5,EnumCreatureType.waterCreature,BiomeGenBase.ocean);
-		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Fish.name","Fish");
+		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Fish.name","Fish");*/
 
-		LanguageRegistry.addName(portalAtlantisBlock,"Atlantis Portal Block");
-		GameRegistry.registerBlock(portalAtlantisBlock,"portalAtlantisBlock");
+		LanguageRegistry.addName(portalAtlantisBlock, "Atlantis Portal Block");
+		GameRegistry.registerBlock(portalAtlantisBlock, "portalAtlantisBlock");
 
 		LanguageRegistry.addName(pearl, "Pearl");
 		GameRegistry.registerItem(pearl, "pearl");
 		
 		LanguageRegistry.addName(trident, "Trident");
 		GameRegistry.registerItem(trident, "trident");
+		
+		LanguageRegistry.addName(fishHead, "Fish Head");
+		GameRegistry.registerItem(fishHead, "fishHead");
 
-		GameRegistry.registerBlock(blockRottenPlanks,"blockRottenPlanks");
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
 		MinecraftForge.setBlockHarvestLevel(blockRottenPlanks, "axe", 1);
-		
-		GameRegistry.registerBlock(deepSandBlock,"deepSandBlock");
+		GameRegistry.registerBlock(blockRottenPlanks,"blockRottenPlanks");
+
 		LanguageRegistry.addName(deepSandBlock,"Deep Sand");
 		MinecraftForge.setBlockHarvestLevel(deepSandBlock, "shovel", 1);
+		GameRegistry.registerBlock(deepSandBlock,"deepSandBlock");
 		
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
 		GameRegistry.registerItem(atlantisWand,"atlantisWand");
 		
-		LanguageRegistry.addName(orePearl, "Pearl Ore");
-		GameRegistry.registerBlock(orePearl, "orePearl");
-		MinecraftForge.setBlockHarvestLevel(orePearl, "pickaxe", 2);
-		
 		LanguageRegistry.addName(blockPearl, "Block of Pearl");
-		GameRegistry.registerBlock(blockPearl, "blockPearl");
 		MinecraftForge.setBlockHarvestLevel(blockPearl, "pickaxe", 2);
-		
-		GameRegistry.registerBlock(blockCoralOrange,"blockCoralOrange");
+		GameRegistry.registerBlock(blockPearl, "blockPearl");
+
 		LanguageRegistry.addName(blockCoralOrange,"Orange Coral");
-		GameRegistry.registerBlock(blockCoralGreen,"blockCoralGreen");
+		GameRegistry.registerBlock(blockCoralOrange,"blockCoralOrange");
 		LanguageRegistry.addName(blockCoralGreen,"Green Coral");
-		GameRegistry.registerBlock(blockCoralRed,"blockCoralRed");
+		GameRegistry.registerBlock(blockCoralGreen,"blockCoralGreen");
 		LanguageRegistry.addName(blockCoralRed,"Red Coral");
-		GameRegistry.registerBlock(blockCoralPurple,"blockCoralPurple");
+		GameRegistry.registerBlock(blockCoralRed,"blockCoralRed");
 		LanguageRegistry.addName(blockCoralPurple,"Purple Coral");
-		GameRegistry.registerBlock(blockCoralYellow,"blockCoralYellow");
+		GameRegistry.registerBlock(blockCoralPurple,"blockCoralPurple");
 		LanguageRegistry.addName(blockCoralYellow,"Yellow Coral");
+		GameRegistry.registerBlock(blockCoralYellow,"blockCoralYellow");
 		
 		LanguageRegistry.addName(axePearl, "Pearl Axe");
 		GameRegistry.registerItem(axePearl, "axePearl");
@@ -177,7 +184,17 @@ public class AtlantisMod {
 		LanguageRegistry.addName(swordPearl, "Pearl Sword");
 		GameRegistry.registerItem(swordPearl, "swordPearl");
 		
+		LanguageRegistry.addName(divingHelmet, "Diving Helmet");
+		GameRegistry.registerItem(divingHelmet, "divingHelmet");
+		LanguageRegistry.addName(scubaSuit, "Diving Suit");
+		GameRegistry.registerItem(scubaSuit, "scubaSuit");
+		LanguageRegistry.addName(oxygenTank, "Oxygen Tank");
+		GameRegistry.registerItem(oxygenTank, "oxygenTank");
+		LanguageRegistry.addName(flippers, "Flippers");
+		GameRegistry.registerItem(flippers, "flippers");
+		
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.stick);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.oxygenTank),"xxx","xbx","xxx",'x',Item.ingotIron,'b',Item.glassBottle);
 
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabAtlantis","en_US","Atlantis Mod");
 	}

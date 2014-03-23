@@ -35,13 +35,13 @@ public class WorldGenAtlantis implements IWorldGenerator {
 	}
 
 	private void generateAtlantis(World world, Random random, int i, int j) {
-		if(random.nextInt(40) == 1) (new WorldGenShipwreck()).generate(world, random, i, 60, j);
-		(new WorldGenReef1()).generate(world, random, i, 60, j);
-		(new WorldGenReef2()).generate(world, random, i, 60, j);
-		(new WorldGenReef3()).generate(world, random, i, 60, j);
-		for(int x=0;x<=5;x++) (new WorldGenBubble2()).generate(world, random, i, 60, j);
-		(new WorldGenBubble3()).generate(world, random, i, 60, j);
-		for(int x=0;x<=2;x++) (new WorldGenGlowstone()).generate(world, random, i, 60, j);
+		if(random.nextInt(500) == 1) (new WorldGenShipwreck()).generate(world, random, i, 60, j);
+		if(random.nextInt(5) == 1) (new WorldGenReef1()).generate(world, random, i, 60, j);
+		if(random.nextInt(5) == 1) (new WorldGenReef2()).generate(world, random, i, 60, j);
+		if(random.nextInt(5) == 1) (new WorldGenReef3()).generate(world, random, i, 60, j);
+		for(int x=0;x<=7;x++) (new WorldGenBubble2()).generate(world, random, i, random.nextInt(60), j);
+		(new WorldGenBubble3()).generate(world, random, i, random.nextInt(60), j);
+		for(int x=0;x<=5;x++) (new WorldGenGlowstone()).generate(world, random, i, 60, j);
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {}
