@@ -11,7 +11,7 @@ Atlantis Dimension for Minecraft 1.6.4
 
 **To start:**
 - Copy the assets and atlantismod folders to your workspace.
-- Add "libraries/PlayerAPI.jar" to your classpath.
+- Add "jars/mods/PlayerAPI.jar" to your classpath.
 
 **TODO:**
 
@@ -34,6 +34,7 @@ Atlantis Dimension for Minecraft 1.6.4
  - Sharkman
  - Many colors of fish
  - Mermaid
+ - Clam
 
 **Blocks**
  - Coral (has many subtypes of different colors)
