@@ -38,7 +38,6 @@ Atlantis Dimension for Minecraft 1.6.4
 
 **Blocks**
  - Coral (has many subtypes of different colors)
- - Pearl Ore
  - Block of Pearl
  - Bubble Door (keeps out water, but you can still walk through it!)
 
