@@ -1,12 +1,74 @@
 package atlantismod.common.entity;
 
+import net.minecraft.entity.EnumCreatureAttribute;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.ai.EntityAIAttackOnCollide;
+import net.minecraft.entity.ai.EntityAIHurtByTarget;
+import net.minecraft.entity.ai.EntityAILookIdle;
+import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
+import net.minecraft.entity.ai.EntityAIWander;
+import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import atlantismod.common.AtlantisMod;
 
 public class EntitySquidman extends EntityMob {
 
 	public EntitySquidman(World par1World) {
 		super(par1World);
+		this.experienceValue = 4;
+        this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
+        this.tasks.addTask(1, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+        this.tasks.addTask(3, new EntityAILookIdle(this));
+        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
+        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
 	}
+	
+	public boolean isAIEnabled() {
+		return true;
+	}
+	
+	public boolean attackEntityAsMob() {
+		return true;
+	}
+	
+	protected void applyEntityAttributes() {
+		super.applyEntityAttributes();
+        this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(20.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(3.0D);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25332148902D);
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(8.0D);
+	}
+	
+    protected void dropFewItems(boolean par1, int par2) {
+        int j = this.rand.nextInt(3 + par2) + 1;
+        for (int k = 0; k < j; ++k) this.entityDropItem(new ItemStack(Item.dyePowder, 1, 0), 0.0F);
+    }
+    
+    public boolean canBreatheUnderwater() {
+    	return true;
+    }
+    
+    public EnumCreatureAttribute getCreatureAttribute() {
+    	return EnumCreatureAttribute.UNDEAD;
+    }
+    
+    protected String getLivingSound() {
+        return "mob.zombie.say";
+    }
+
+    protected String getHurtSound() {
+        return "mob.zombie.hurt";
+    }
+    
+    protected String getDeathSound() {
+        return "mob.zombie.death";
+    }
+    
+    protected void playStepSound(int par1, int par2, int par3, int par4) {}
 
 }

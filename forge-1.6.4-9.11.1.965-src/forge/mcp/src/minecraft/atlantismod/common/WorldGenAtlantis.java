@@ -37,13 +37,13 @@ public class WorldGenAtlantis implements IWorldGenerator {
 
 	private void generateAtlantis(World world, Random random, int i, int j) {
 		if(random.nextInt(500) == 1) (new WorldGenShipwreck()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
-		if(random.nextInt(100/*600*/) == 1) (new WorldGenAtlantisCity()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
-		if(random.nextInt(5) == 1) (new WorldGenReef1()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
+		if(random.nextInt(5) == 1) (new WorldGenReef1()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));//should a coral reef be a BIOME instead of a STRUCTURE?
 		if(random.nextInt(5) == 1) (new WorldGenReef2()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 		if(random.nextInt(5) == 1) (new WorldGenReef3()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 		for(int x=0;x<=6;x++) (new WorldGenBubble2()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
 		(new WorldGenBubble3()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
 		for(int x=0;x<=2;x++) (new WorldGenGlowstone()).generate(world, random, i + random.nextInt(15), 55, j + random.nextInt(15));
+		if(random.nextInt(600) == 1) (new WorldGenAtlantisCity()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 	}
 
 	private void generateEnd(World world, Random random, int i, int j) {}

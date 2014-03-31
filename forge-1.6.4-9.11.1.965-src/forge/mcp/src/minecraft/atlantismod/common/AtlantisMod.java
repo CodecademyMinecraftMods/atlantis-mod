@@ -20,6 +20,8 @@ import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockSand;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityEggInfo;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.EnumToolMaterial;
@@ -88,8 +90,6 @@ public class AtlantisMod {
 	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
 	
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
-	
-	private static int fishID = 2222;
 	
 	public AtlantisMod() {
 		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
@@ -189,6 +189,8 @@ public class AtlantisMod {
 		EntityRegistry.registerModEntity(EntityClam.class,"Clam",12,this,40,3,true);
 		EntityRegistry.addSpawn(EntityClam.class,8,1,1,EnumCreatureType.waterCreature,BiomeGenBase.ocean);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Clam.name","Clam");
+		
+		registerEntityEgg(EntitySquidman.class,0xFFFFFF,0x000000);
 
 		LanguageRegistry.addName(portalAtlantisBlock, "Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock, "portalAtlantisBlock");
@@ -248,7 +250,7 @@ public class AtlantisMod {
 		LanguageRegistry.addName(flippers, "Flippers");
 		GameRegistry.registerItem(flippers, "flippers");
 	
-		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.stick);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.blazeRod);
         GameRegistry.addRecipe(new ItemStack(Item.dyePowder, 2, 15),"x",'x',AtlantisMod.fishHead);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.blockPearl),"xxx","xxx","xxx",'x',AtlantisMod.pearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pearl),"x",'x',AtlantisMod.blockPearl);
@@ -269,5 +271,19 @@ public class AtlantisMod {
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {}
+	
+	public static int getUniqueEntityId() {
+		int startEntityId = 100;
+		do {
+			startEntityId++;
+		} while (EntityList.getStringFromID(startEntityId) != null);
+		return startEntityId;
+	}
+	
+	public static void registerEntityEgg(Class<? extends Entity> entity, int primaryColor, int secondaryColor) {
+		int id = getUniqueEntityId();
+		EntityList.IDtoClassMapping.put(id, entity);
+		EntityList.entityEggs.put(id, new EntityEggInfo(id, primaryColor, secondaryColor));
+	}
 	
 }
