@@ -1,4 +1,4 @@
-package atlantismod.common;
+package atlantismod.common.item;
 
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraft.item.Item;

@@ -1,4 +1,4 @@
-package atlantismod.common;
+package atlantismod.common.block;
 
 import net.minecraft.block.BlockPortal;
 

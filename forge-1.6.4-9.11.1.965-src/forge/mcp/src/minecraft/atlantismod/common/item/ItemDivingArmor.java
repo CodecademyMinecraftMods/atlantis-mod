@@ -1,5 +1,6 @@
-package atlantismod.common;
+package atlantismod.common.item;
 
+import atlantismod.common.AtlantisMod;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;

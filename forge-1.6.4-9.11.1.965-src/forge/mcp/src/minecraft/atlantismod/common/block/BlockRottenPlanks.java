@@ -1,4 +1,4 @@
-package atlantismod.common;
+package atlantismod.common.block;
 
 import java.util.Random;
 import net.minecraft.block.Block;
