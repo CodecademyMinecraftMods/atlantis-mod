@@ -3,9 +3,9 @@ package atlantismod.common.entity;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.world.World;
 
-public class EntityClam extends EntityWaterMob {
+public class EntityEel extends EntityWaterMob {
 
-	public EntityClam(World par1World) {
+	public EntityEel(World par1World) {
 		super(par1World);
 	}
 
