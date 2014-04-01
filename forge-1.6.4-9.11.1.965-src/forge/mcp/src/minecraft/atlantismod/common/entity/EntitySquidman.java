@@ -58,15 +58,15 @@ public class EntitySquidman extends EntityMob {
     }
     
     protected String getLivingSound() {
-        return "mob.zombie.say";
+        return "assets.atlantismod.sounds.mob.squidman.idle1.ogg";
     }
 
     protected String getHurtSound() {
-        return "mob.zombie.hurt";
+        return "assets.atlantismod.sounds.mob.squidman.hurt1.ogg";
     }
     
     protected String getDeathSound() {
-        return "mob.zombie.death";
+        return "assets.atlanitsmod.sounds.mob.squidman.death1.ogg";
     }
     
     protected void playStepSound(int par1, int par2, int par3, int par4) {}
