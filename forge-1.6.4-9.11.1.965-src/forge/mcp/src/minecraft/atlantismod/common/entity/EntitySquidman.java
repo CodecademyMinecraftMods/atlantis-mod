@@ -44,9 +44,16 @@ public class EntitySquidman extends EntityMob {
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(8.0D);
 	}
 	
-    protected void dropFewItems(boolean par1, int par2) {
-        int j = this.rand.nextInt(3 + par2) + 1;
-        for (int k = 0; k < j; ++k) this.entityDropItem(new ItemStack(Item.dyePowder, 1, 0), 0.0F);
+    protected void dropFewItems(boolean par1, int par2)
+    {
+        int j = this.rand.nextInt(3) + this.rand.nextInt(1 + par2);
+        int k;
+
+        for (k = 0; k < j; ++k) {
+            this.dropItem(Item.dyePowder.itemID, 1);
+        }
+
+        j = this.rand.nextInt(3) + 1 + this.rand.nextInt(1 + par2);
     }
     
     public boolean canBreatheUnderwater() {
@@ -58,17 +65,17 @@ public class EntitySquidman extends EntityMob {
     }
     
     protected String getLivingSound() {
-        return "assets.atlantismod.sounds.mob.squidman.idle1.ogg";
+        return "assets.atlantismod.sounds.mob.squidman.idle";
     }
 
     protected String getHurtSound() {
-        return "assets.atlantismod.sounds.mob.squidman.hurt1.ogg";
+        return "assets.atlantismod.sounds.mob.squidman.hurt";
     }
     
     protected String getDeathSound() {
-        return "assets.atlanitsmod.sounds.mob.squidman.death1.ogg";
+        return "assets.atlanitsmod.sounds.mob.squidman.death";
     }
-    
-    protected void playStepSound(int par1, int par2, int par3, int par4) {}
 
+    protected void playStepSound(int par1, int par2, int par3, int par4) {}
+    	
 }
