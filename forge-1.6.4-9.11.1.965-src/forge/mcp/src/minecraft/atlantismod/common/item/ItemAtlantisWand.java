@@ -3,7 +3,7 @@ package atlantismod.common.item;
 import java.util.Random;
 
 import atlantismod.common.AtlantisMod;
-import atlantismod.common.TeleporterAtlantis;
+import atlantismod.common.dimension.TeleporterAtlantis;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;

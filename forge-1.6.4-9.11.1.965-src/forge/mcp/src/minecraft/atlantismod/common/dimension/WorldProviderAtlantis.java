@@ -1,5 +1,6 @@
-package atlantismod.common;
+package atlantismod.common.dimension;
 
+import atlantismod.common.AtlantisMod;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManagerHell;

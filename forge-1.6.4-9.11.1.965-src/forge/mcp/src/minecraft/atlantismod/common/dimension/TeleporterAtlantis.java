@@ -1,9 +1,11 @@
-package atlantismod.common;
+package atlantismod.common.dimension;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+
+import atlantismod.common.AtlantisMod;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;

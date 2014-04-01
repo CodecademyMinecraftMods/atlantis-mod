@@ -1,7 +1,8 @@
-package atlantismod.common;
+package atlantismod.common.dimension;
 
 import java.util.Random;
 
+import atlantismod.common.AtlantisMod;
 import atlantismod.common.structures.WorldGenAtlantisCity;
 import atlantismod.common.structures.WorldGenBubble2;
 import atlantismod.common.structures.WorldGenBubble3;

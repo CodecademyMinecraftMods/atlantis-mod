@@ -5,6 +5,8 @@ import api.player.server.ServerPlayerAPI;
 import atlantismod.common.block.BlockAtlantisPortal;
 import atlantismod.common.block.BlockCoral;
 import atlantismod.common.block.BlockRottenPlanks;
+import atlantismod.common.dimension.WorldGenAtlantis;
+import atlantismod.common.dimension.WorldProviderAtlantis;
 import atlantismod.common.entity.EntityClam;
 import atlantismod.common.entity.EntityMermaid;
 import atlantismod.common.entity.EntityShark;

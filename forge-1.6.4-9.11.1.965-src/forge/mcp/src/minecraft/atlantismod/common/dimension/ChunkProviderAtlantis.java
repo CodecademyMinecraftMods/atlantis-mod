@@ -1,4 +1,4 @@
-package atlantismod.common;
+package atlantismod.common.dimension;
 
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.CAVE;
 import static net.minecraftforge.event.terraingen.InitMapGenEvent.EventType.MINESHAFT;
