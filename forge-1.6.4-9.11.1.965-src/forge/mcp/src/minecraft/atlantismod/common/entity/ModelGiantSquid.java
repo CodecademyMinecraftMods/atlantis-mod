@@ -24,7 +24,7 @@ public class ModelGiantSquid extends ModelBase
   public ModelGiantSquid()
   {
     textureWidth = 256;
-    textureHeight = 256;
+    textureHeight = 64;
     
       leg1 = new ModelRenderer(this, 80, 0);
       leg1.addBox(-1F, -1F, -1F, 2, 2, 26);

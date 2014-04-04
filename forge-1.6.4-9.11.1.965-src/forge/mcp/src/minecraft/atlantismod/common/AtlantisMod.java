@@ -199,6 +199,17 @@ public class AtlantisMod {
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Clam.name","Clam");
 		
 		registerEntityEgg(EntitySquidman.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityAtlantisFish.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityGiantSquid.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityAnglerFish.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityWhale.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityKraken.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityEel.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityElectricEel.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntitySharkman.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityShark.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityMermaid.class,0xFFFFFF,0x000000);
+		registerEntityEgg(EntityClam.class,0xFFFFFF,0x000000);
 
 		LanguageRegistry.addName(portalAtlantisBlock, "Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock, "portalAtlantisBlock");

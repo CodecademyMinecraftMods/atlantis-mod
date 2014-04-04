@@ -1,6 +1,7 @@
 package atlantismod.common.entity;
 
 import atlantismod.common.AtlantisMod;
+import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.item.Item;
@@ -11,10 +12,9 @@ public class EntityAtlantisFish extends EntityWaterMob {
 
 	public EntityAtlantisFish(World par1World) {
 		super(par1World);
-		this.setHealth(8.0F);
-		this.setSize(0.0F, 0.0F);
-		this.setAIMoveSpeed(0.35F);
-		this.tasks.addTask(0, new EntityAIWander(this, this.getAIMoveSpeed()));
+		this.experienceValue = 2;
+        this.tasks.addTask(0, new EntityAIWander(this, 1.0D));
+        this.tasks.addTask(1, new EntityAILookIdle(this));
 	}
 	
 	protected boolean isAIEnabled() {
@@ -32,6 +32,8 @@ public class EntityAtlantisFish extends EntityWaterMob {
 	protected String getDeathSound() {
 		return "";
 	}
+	
+    protected void playStepSound(int par1, int par2, int par3, int par4) {}
 	
 	protected int getDropItemId() {
 		return AtlantisMod.fishHead.itemID;
