@@ -8,14 +8,13 @@ import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAINearestAttackableTarget;
 import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import atlantismod.common.AtlantisMod;
 
-public class EntitySquidman extends EntityMob {
+public class EntitySquidman extends EntityAtlantisMob {
 
 	public EntitySquidman(World par1World) {
 		super(par1World);
@@ -32,10 +31,6 @@ public class EntitySquidman extends EntityMob {
 		return true;
 	}
 	
-	public boolean attackEntityAsMob() {
-		return true;
-	}
-	
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
         this.getEntityAttribute(SharedMonsterAttributes.followRange).setAttribute(20.0D);
@@ -47,10 +42,6 @@ public class EntitySquidman extends EntityMob {
     protected void dropFewItems(boolean par1, int par2) {
         int j = this.rand.nextInt(3) + this.rand.nextInt(1 + par2), k;
         for (k = 0; k < j; ++k) this.dropItem(Item.dyePowder.itemID, 1);
-    }
-    
-    public boolean canBreatheUnderwater() {
-    	return true;
     }
     
     public EnumCreatureAttribute getCreatureAttribute() {

@@ -1,9 +1,9 @@
 package atlantismod.common.entity;
 
 import atlantismod.common.AtlantisMod;
+import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.entity.ai.EntityAILookIdle;
 import net.minecraft.entity.ai.EntityAIWander;
-import net.minecraft.entity.passive.EntityWaterMob;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;

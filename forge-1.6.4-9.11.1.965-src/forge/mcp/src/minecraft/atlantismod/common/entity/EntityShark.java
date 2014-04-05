@@ -12,7 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 
-public class EntityShark extends EntityMob {
+public class EntityShark extends EntityAtlantisMob {
 
 	public EntityShark(World par1World) {
 		super(par1World);
@@ -31,10 +31,6 @@ public class EntityShark extends EntityMob {
 		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setAttribute(5.0D);
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setAttribute(0.25332148902D);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setAttribute(15.0D);
-	}
-	
-	public boolean canBreatheUnderwater() {
-		return true;
 	}
 	
 	protected boolean isAIEnabled() {

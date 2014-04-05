@@ -27,7 +27,7 @@ public class AtlantisServerPlayerBase extends ServerPlayerBase {
 			if(this.player.inventory.armorInventory[1].stackSize == 0) this.player.inventory.armorInventory[1] = null;
 			return true;
 		}
-		return super.canBreatheUnderwater();
+		return false;
 	}
 	
 }

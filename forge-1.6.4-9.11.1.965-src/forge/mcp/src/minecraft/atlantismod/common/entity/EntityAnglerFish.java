@@ -1,9 +1,8 @@
 package atlantismod.common.entity;
 
-import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 
-public class EntityAnglerFish extends EntityMob {
+public class EntityAnglerFish extends EntityAtlantisMob {
 
 	public EntityAnglerFish(World par1World) {
 		super(par1World);
