@@ -11,15 +11,43 @@ import net.minecraft.util.ResourceLocation;
 public class RenderFish extends RenderLiving {
 
 	protected ModelFish model;
+	private String color;
+	private Random rand = new Random();
 	
 	public RenderFish(ModelBase par1ModelBase, float par2) {
 		super(par1ModelBase, par2);
 		this.model = (ModelFish)this.mainModel;
+		switch(rand.nextInt(8)) {
+		case 1:
+			this.color = "red";
+			break;
+		case 2:
+			this.color = "green";
+			break;
+		case 3:
+			this.color = "yellow";
+			break;
+		case 4:
+			this.color = "brown";
+			break;
+		case 5:
+			this.color = "blue";
+			break;
+		case 6:
+			this.color = "orange";
+			break;
+		case 7:
+			this.color = "purple";
+			break;
+		default:
+			this.color = "silver";
+		}
 	}
 
 	@Override
 	protected ResourceLocation getEntityTexture(Entity entity) {
-		return new ResourceLocation("atlantismod:textures/entity/brown_fish.png");
+		String str = "atlantismod:textures/entity/" + this.color + "_fish.png";
+		return new ResourceLocation(str);
 	}
 	
 	public void renderFish(EntityAtlantisFish entity, double par2, double par4, double par6, float par8, float par9) {

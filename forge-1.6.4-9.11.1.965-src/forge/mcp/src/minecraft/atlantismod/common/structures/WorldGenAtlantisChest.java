@@ -27,4 +27,11 @@ public class WorldGenAtlantisChest extends WorldGenerator {
         if (tileentitychest != null) WeightedRandomChestContent.generateChestContents(par2Random, content, tileentitychest, this.itemsToGenerateInBonusChest);
         return true;
     }
+
+	public boolean generate(World world, Random random, int i, int j, int k, int metadata) {
+		world.setBlock(i, j, k, Block.chest.blockID, 2, metadata);
+        TileEntityChest tileentitychest = (TileEntityChest)world.getBlockTileEntity(i, j, k);
+        if (tileentitychest != null) WeightedRandomChestContent.generateChestContents(random, content, tileentitychest, this.itemsToGenerateInBonusChest);
+        return true;
+	}
 }
