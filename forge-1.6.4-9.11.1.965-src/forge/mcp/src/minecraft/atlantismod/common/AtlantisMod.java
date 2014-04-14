@@ -210,18 +210,18 @@ public class AtlantisMod {
 		EntityRegistry.addSpawn(EntityClam.class,8,1,1,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Clam.name","Clam");
 		
-		registerEntityEgg(EntitySquidman.class,0xffffff,0x000000);
+		registerEntityEgg(EntitySquidman.class,0xffff66,0x000099);
 		registerEntityEgg(EntityAtlantisFish.class,0xffffff,0x000000);
-		registerEntityEgg(EntityGiantSquid.class,0xffffff,0x000000);
-		registerEntityEgg(EntityAnglerFish.class,0xffffff,0x000000);
-		registerEntityEgg(EntityWhale.class,0xffffff,0x000000);
-		registerEntityEgg(EntityKraken.class,0xffffff,0x000000);
-		registerEntityEgg(EntityEel.class,0xffffff,0x000000);
-		registerEntityEgg(EntityElectricEel.class,0xffffff,0x000000);
-		registerEntityEgg(EntitySharkman.class,0xffffff,0x000000);
-		registerEntityEgg(EntityShark.class,0xffffff,0x000000);
-		registerEntityEgg(EntityMermaid.class,0xffffff,0x000000);
-		registerEntityEgg(EntityClam.class,0xffffff,0x000000);
+		registerEntityEgg(EntityGiantSquid.class,0x000099,0x000000);
+		registerEntityEgg(EntityAnglerFish.class,0xcc0000,0xffff00);
+		registerEntityEgg(EntityWhale.class,0x000099,0xffffff);
+		registerEntityEgg(EntityKraken.class,0x006600,0x000000);
+		registerEntityEgg(EntityEel.class,0xffff00,0x0000cc);
+		registerEntityEgg(EntityElectricEel.class,0xffff00,0xffffff);
+		registerEntityEgg(EntitySharkman.class,0xffff66,0x4c4c43);
+		registerEntityEgg(EntityShark.class,0x4c4c43,0xffffff);
+		registerEntityEgg(EntityMermaid.class,0xffff66,0x006600);
+		registerEntityEgg(EntityClam.class,0x4c4c43,0x000000);
 
 		LanguageRegistry.addName(portalAtlantisBlock, "Atlantis Portal Block");
 		GameRegistry.registerBlock(portalAtlantisBlock, "portalAtlantisBlock");
