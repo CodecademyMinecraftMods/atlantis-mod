@@ -17,5 +17,5 @@ Atlantis Dimension for Minecraft 1.6.4
 - Copy the assets and atlantismod folders to your workspace.
 - Add "jars/mods/PlayerAPI.jar" to your classpath.
 
-**GitHub:** http://www.github.com/codecademyminecraftmods/atlantis-mod/
-**Minecraft Forum:** http://www.minecraftforum.net/topic/2515843-wip164-atlantis-mod-an-underwater-world/
+ - **GitHub:** http://www.github.com/codecademyminecraftmods/atlantis-mod/
+ - **Minecraft Forum:** http://www.minecraftforum.net/topic/2515843-wip164-atlantis-mod-an-underwater-world/
