@@ -1,5 +1,7 @@
-package atlantismod.common.entity;
+package atlantismod.common.entity.render;
 
+import atlantismod.common.entity.base.EntityGiantSquid;
+import atlantismod.common.entity.model.ModelGiantSquid;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;

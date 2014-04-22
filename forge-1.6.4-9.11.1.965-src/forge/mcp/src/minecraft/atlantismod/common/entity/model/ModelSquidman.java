@@ -1,4 +1,4 @@
-package atlantismod.common.entity;
+package atlantismod.common.entity.model;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;

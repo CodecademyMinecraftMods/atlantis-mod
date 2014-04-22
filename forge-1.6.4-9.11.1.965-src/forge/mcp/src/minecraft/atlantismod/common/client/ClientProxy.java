@@ -1,18 +1,18 @@
 package atlantismod.common.client;
 
 import atlantismod.common.CommonProxy;
-import atlantismod.common.entity.EntityAtlantisFish;
-import atlantismod.common.entity.EntityGiantSquid;
-import atlantismod.common.entity.EntityShark;
-import atlantismod.common.entity.EntitySquidman;
-import atlantismod.common.entity.ModelFish;
-import atlantismod.common.entity.ModelGiantSquid;
-import atlantismod.common.entity.ModelShark;
-import atlantismod.common.entity.ModelSquidman;
-import atlantismod.common.entity.RenderFish;
-import atlantismod.common.entity.RenderGiantSquid;
-import atlantismod.common.entity.RenderShark;
-import atlantismod.common.entity.RenderSquidman;
+import atlantismod.common.entity.base.EntityAtlantisFish;
+import atlantismod.common.entity.base.EntityGiantSquid;
+import atlantismod.common.entity.base.EntityShark;
+import atlantismod.common.entity.base.EntitySquidman;
+import atlantismod.common.entity.model.ModelFish;
+import atlantismod.common.entity.model.ModelGiantSquid;
+import atlantismod.common.entity.model.ModelShark;
+import atlantismod.common.entity.model.ModelSquidman;
+import atlantismod.common.entity.render.RenderFish;
+import atlantismod.common.entity.render.RenderGiantSquid;
+import atlantismod.common.entity.render.RenderShark;
+import atlantismod.common.entity.render.RenderSquidman;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
 public class ClientProxy extends CommonProxy {

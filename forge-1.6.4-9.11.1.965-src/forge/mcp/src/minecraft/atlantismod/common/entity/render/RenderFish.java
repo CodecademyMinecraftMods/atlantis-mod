@@ -1,7 +1,9 @@
-package atlantismod.common.entity;
+package atlantismod.common.entity.render;
 
 import java.util.Random;
 
+import atlantismod.common.entity.base.EntityAtlantisFish;
+import atlantismod.common.entity.model.ModelFish;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;

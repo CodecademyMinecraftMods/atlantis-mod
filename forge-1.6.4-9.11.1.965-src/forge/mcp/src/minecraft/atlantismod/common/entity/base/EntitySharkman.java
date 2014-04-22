@@ -1,4 +1,4 @@
-package atlantismod.common.entity;
+package atlantismod.common.entity.base;
 
 import net.minecraft.world.World;
 

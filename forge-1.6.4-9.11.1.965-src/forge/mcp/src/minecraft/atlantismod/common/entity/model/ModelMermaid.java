@@ -9,7 +9,11 @@
 
 
 
-package net.minecraft.src;
+package atlantismod.common.entity.model;
+
+import net.minecraft.client.model.ModelBase;
+import net.minecraft.client.model.ModelRenderer;
+import net.minecraft.entity.Entity;
 
 public class ModelMermaid extends ModelBase
 {
