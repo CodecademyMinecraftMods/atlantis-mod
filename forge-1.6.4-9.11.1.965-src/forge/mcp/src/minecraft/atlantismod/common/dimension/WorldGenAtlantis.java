@@ -7,6 +7,7 @@ import atlantismod.common.structures.WorldGenAtlantisCity;
 import atlantismod.common.structures.WorldGenBubble2;
 import atlantismod.common.structures.WorldGenBubble3;
 import atlantismod.common.structures.WorldGenGlowstone;
+import atlantismod.common.structures.WorldGenOverworldShrine;
 import atlantismod.common.structures.WorldGenShipwreck;
 import net.minecraft.block.Block;
 import net.minecraft.world.World;
@@ -43,7 +44,9 @@ public class WorldGenAtlantis implements IWorldGenerator {
 
 	private void generateEnd(World world, Random random, int i, int j) {}
 
-	private void generateSurface(World world, Random random, int i, int j) {}
+	private void generateSurface(World world, Random random, int i, int j) {
+		(new WorldGenOverworldShrine()).generate(world, random, i, random.nextInt(60), j);
+	}
 
 	private void generateNether(World world, Random random, int i, int j) {}
 

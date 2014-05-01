@@ -9,18 +9,18 @@ import atlantismod.common.dimension.BiomeGenAtlantisOcean;
 import atlantismod.common.dimension.BiomeGenCoralReef;
 import atlantismod.common.dimension.WorldGenAtlantis;
 import atlantismod.common.dimension.WorldProviderAtlantis;
-import atlantismod.common.entity.base.EntityAnglerFish;
-import atlantismod.common.entity.base.EntityAtlantisFish;
-import atlantismod.common.entity.base.EntityClam;
-import atlantismod.common.entity.base.EntityEel;
-import atlantismod.common.entity.base.EntityElectricEel;
-import atlantismod.common.entity.base.EntityGiantSquid;
-import atlantismod.common.entity.base.EntityKraken;
-import atlantismod.common.entity.base.EntityMermaid;
-import atlantismod.common.entity.base.EntityShark;
-import atlantismod.common.entity.base.EntitySharkman;
-import atlantismod.common.entity.base.EntitySquidman;
-import atlantismod.common.entity.base.EntityWhale;
+import atlantismod.common.entity.EntityClam;
+import atlantismod.common.entity.EntityMermaid;
+import atlantismod.common.entity.EntityShark;
+import atlantismod.common.entity.EntityEel;
+import atlantismod.common.entity.EntityElectricEel;
+import atlantismod.common.entity.EntityKraken;
+import atlantismod.common.entity.EntityAnglerFish;
+import atlantismod.common.entity.EntityAtlantisFish;
+import atlantismod.common.entity.EntityGiantSquid;
+import atlantismod.common.entity.EntitySharkman;
+import atlantismod.common.entity.EntitySquidman;
+import atlantismod.common.entity.EntityWhale;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
 import atlantismod.common.item.ItemTrident;
@@ -96,7 +96,7 @@ public class AtlantisMod {
 
 	public static Block deepSandBlock, blockRottenPlanks;
 
-	public static Item pearl, atlantisWand, trident;
+	public static Item pearl, atlantisWand, trident, atlantisEye, scepter;
 	
 	public static Item fishHead;
 	
@@ -127,8 +127,10 @@ public class AtlantisMod {
 		blockRottenPlanks = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
 		
 		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
-		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand");
+		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
 		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
+		atlantisEye = (new Item(2244)).setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
+		scepter = (new Item(2245)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
 		
 		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head").setUnlocalizedName("fishHead");
 		
@@ -234,6 +236,12 @@ public class AtlantisMod {
 		
 		LanguageRegistry.addName(fishHead, "Fish Head");
 		GameRegistry.registerItem(fishHead, "fishHead");
+		
+		LanguageRegistry.addName(atlantisEye, "Eye of Atlantis");
+		GameRegistry.registerItem(atlantisEye, "atlantisEye");
+		
+		LanguageRegistry.addName(scepter, "Scepter");
+		GameRegistry.registerItem(scepter, "scepter");
 
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
 		MinecraftForge.setBlockHarvestLevel(blockRottenPlanks, "axe", 1);
@@ -281,8 +289,9 @@ public class AtlantisMod {
 		LanguageRegistry.addName(flippers, "Flippers");
 		GameRegistry.registerItem(flippers, "flippers");
 	
-		GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," xx"," sx","s  ",'x',Item.diamond,'s',Item.blazeRod);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.scepter)," xx"," sx","s  ",'x',Item.diamond,'s',Item.blazeRod);
         GameRegistry.addRecipe(new ItemStack(Item.dyePowder, 2, 15),"x",'x',AtlantisMod.fishHead);
+        GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand),"  x"," s ","x  ",'x',AtlantisMod.atlantisEye,'s',AtlantisMod.scepter);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.blockPearl),"xxx","xxx","xxx",'x',AtlantisMod.pearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pearl),"x",'x',AtlantisMod.blockPearl);
 
