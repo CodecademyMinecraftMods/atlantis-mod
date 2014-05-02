@@ -21,6 +21,7 @@ import atlantismod.common.entity.EntityGiantSquid;
 import atlantismod.common.entity.EntitySharkman;
 import atlantismod.common.entity.EntitySquidman;
 import atlantismod.common.entity.EntityWhale;
+import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
 import atlantismod.common.item.ItemTrident;
@@ -129,7 +130,7 @@ public class AtlantisMod {
 		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
 		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
-		atlantisEye = (new Item(2244)).setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
+		atlantisEye = (new ItemAtlantisEye(2244,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
 		scepter = (new Item(2245)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
 		
 		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head").setUnlocalizedName("fishHead");

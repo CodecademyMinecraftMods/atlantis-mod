@@ -45,7 +45,7 @@ public class WorldGenAtlantis implements IWorldGenerator {
 	private void generateEnd(World world, Random random, int i, int j) {}
 
 	private void generateSurface(World world, Random random, int i, int j) {
-		(new WorldGenOverworldShrine()).generate(world, random, i, random.nextInt(60), j);
+		if(random.nextInt(444) == 1) (new WorldGenOverworldShrine()).generate(world, random, i, 80, j);
 	}
 
 	private void generateNether(World world, Random random, int i, int j) {}
