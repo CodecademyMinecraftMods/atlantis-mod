@@ -9,18 +9,18 @@ import atlantismod.common.dimension.BiomeGenAtlantisOcean;
 import atlantismod.common.dimension.BiomeGenCoralReef;
 import atlantismod.common.dimension.WorldGenAtlantis;
 import atlantismod.common.dimension.WorldProviderAtlantis;
-import atlantismod.common.entity.EntityClam;
-import atlantismod.common.entity.EntityMermaid;
-import atlantismod.common.entity.EntityShark;
-import atlantismod.common.entity.EntityEel;
-import atlantismod.common.entity.EntityElectricEel;
-import atlantismod.common.entity.EntityKraken;
-import atlantismod.common.entity.EntityAnglerFish;
-import atlantismod.common.entity.EntityAtlantisFish;
-import atlantismod.common.entity.EntityGiantSquid;
-import atlantismod.common.entity.EntitySharkman;
-import atlantismod.common.entity.EntitySquidman;
-import atlantismod.common.entity.EntityWhale;
+import atlantismod.common.entity.base.EntityClam;
+import atlantismod.common.entity.base.EntityMermaid;
+import atlantismod.common.entity.base.EntityShark;
+import atlantismod.common.entity.base.EntityEel;
+import atlantismod.common.entity.base.EntityElectricEel;
+import atlantismod.common.entity.base.EntityKraken;
+import atlantismod.common.entity.base.EntityAnglerFish;
+import atlantismod.common.entity.base.EntityAtlantisFish;
+import atlantismod.common.entity.base.EntityGiantSquid;
+import atlantismod.common.entity.base.EntitySharkman;
+import atlantismod.common.entity.base.EntitySquidman;
+import atlantismod.common.entity.base.EntityWhale;
 import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
@@ -116,11 +116,7 @@ public class AtlantisMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		tabAtlantis = new CreativeTabs("tabAtlantis") {
-			public ItemStack getIconItemStack() {
-				return new ItemStack(AtlantisMod.pearl.itemID, 1, 0);
-			}
-		};
+		tabAtlantis = new CreativeTabs("tabAtlantis") {public ItemStack getIconItemStack() {return new ItemStack(AtlantisMod.pearl.itemID, 1, 0);}};
 		
 		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
 		
@@ -302,7 +298,7 @@ public class AtlantisMod {
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.swordPearl)," x "," x "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.shovelPearl)," x "," s "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
 
-        GameRegistry.addRecipe(new ItemStack(AtlantisMod.divingHelmet),"iii","x x",'i',Item.ingotIron,'x',Item.leather);
+        GameRegistry.addRecipe(new ItemStack(AtlantisMod.divingHelmet),"iii","ibi",'i',Item.ingotIron,'b',Block.fenceIron);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.scubaSuit),"x x","xsx","xxx",'x',Item.leather,'s',Item.ingotIron);
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.oxygenTank),"xxx","xbx","xxx",'x',Item.ingotIron,'b',Item.glassBottle);
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.flippers),"x x","x x",'x',Block.waterlily);

@@ -1,12 +1,12 @@
 package atlantismod.common.entity.render;
 
-import atlantismod.common.entity.base.EntityGiantSquid;
-import atlantismod.common.entity.model.ModelGiantSquid;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
+import atlantismod.common.entity.base.EntityGiantSquid;
+import atlantismod.common.entity.model.ModelGiantSquid;
 
 public class RenderGiantSquid extends RenderLiving {
 

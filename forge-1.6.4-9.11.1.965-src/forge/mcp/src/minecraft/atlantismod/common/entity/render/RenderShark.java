@@ -1,14 +1,12 @@
 package atlantismod.common.entity.render;
 
-import java.util.Random;
-
-import atlantismod.common.entity.base.EntityShark;
-import atlantismod.common.entity.model.ModelShark;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
+import atlantismod.common.entity.base.EntityShark;
+import atlantismod.common.entity.model.ModelShark;
 
 public class RenderShark extends RenderLiving {
 
