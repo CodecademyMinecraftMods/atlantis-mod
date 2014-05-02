@@ -8,6 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ModelSquidman extends ModelBase {
+//fieldss
     public ModelRenderer leg1;
     public ModelRenderer leg2;
     public ModelRenderer leg3;
