@@ -15,5 +15,8 @@ public class EntityGiantSquid extends EntitySquid {
 		this.experienceValue = 15;
         
 	}
+	protected void applyEntityAttributes() {
+		
+	}
 
 }

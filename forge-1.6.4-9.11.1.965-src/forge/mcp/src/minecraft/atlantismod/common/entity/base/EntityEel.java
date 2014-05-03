@@ -7,5 +7,8 @@ public class EntityEel extends EntityAtlantisMob {
 	public EntityEel(World par1World) {
 		super(par1World);
 	}
+	protected void applyEntityAttributes() {
+		
+	}
 
 }
