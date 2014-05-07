@@ -1,4 +1,4 @@
-package atlantismod.common.playerapi;
+/*package atlantismod.common.playerapi;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -70,4 +70,4 @@ public class AtlantisServerPlayerBase extends ServerPlayerBase {
         return (f < 0 ? 0 : f);
 	}
 	
-}
+}*/

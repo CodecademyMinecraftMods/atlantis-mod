@@ -97,7 +97,7 @@ public class AtlantisMod {
 
 	public static Block deepSandBlock, blockRottenPlanks;
 
-	public static Item pearl, atlantisWand, trident, atlantisEye, scepter;
+	public static Item pearl, atlantisWand, trident, atlantisEye, scepter, necklace;
 	
 	public static Item fishHead;
 	
@@ -128,6 +128,7 @@ public class AtlantisMod {
 		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
 		atlantisEye = (new ItemAtlantisEye(2244,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
 		scepter = (new Item(2245)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
+		necklace = (new Item(2246)).setUnlocalizedName("necklace").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
 		
 		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head").setUnlocalizedName("fishHead");
 		
@@ -276,6 +277,8 @@ public class AtlantisMod {
 		GameRegistry.registerItem(shovelPearl, "shovelPearl");
 		LanguageRegistry.addName(swordPearl, "Pearl Sword");
 		GameRegistry.registerItem(swordPearl, "swordPearl");
+		LanguageRegistry.addName(necklace, "Necklace");
+		GameRegistry.registerItem(necklace, "necklace");
 		
 		LanguageRegistry.addName(divingHelmet, "Diving Helmet");
 		GameRegistry.registerItem(divingHelmet, "divingHelmet");
@@ -297,6 +300,7 @@ public class AtlantisMod {
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.hoePearl),"xx "," s "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.swordPearl)," x "," x "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.shovelPearl)," x "," s "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
+        GameRegistry.addRecipe(new ItemStack(AtlantisMod.necklace), "g g","g g"," e ", 'g', net.minecraft.item.Item.ingotGold, 'e', AtlantisMod.atlantisEye);
 
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.divingHelmet),"iii","ibi",'i',Item.ingotIron,'b',Block.fenceIron);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.scubaSuit),"x x","xsx","xxx",'x',Item.leather,'s',Item.ingotIron);
