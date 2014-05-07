@@ -29,8 +29,21 @@ public class AtlantisServerPlayerBase extends ServerPlayerBase {
 			this.player.inventory.armorInventory[1].damageItem(1, this.player);
 			if(this.player.inventory.armorInventory[1].stackSize == 0) this.player.inventory.armorInventory[1] = null;
 			return true;
+		} else if(chest != null && chest.itemID == AtlantisMod.necklace.itemID && !super.canBreatheUnderwater()) {
+			this.player.inventory.armorInventory[2].damageItem(1, this.player);
+			if(this.player.inventory.armorInventory[2].stackSize == 0) this.player.inventory.armorInventory[1] = null;
+			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public void onLivingUpdate() {
+		super.onLivingUpdate();
+		ItemStack chest = this.player.inventory.armorItemInSlot(2);
+		if(!this.player.isInsideOfMaterial(Material.water) && chest != null && chest.itemID == AtlantisMod.necklace.itemID) {
+			this.player.inventory.armorInventory[2].damageItem(-5, this.player);
+		}
 	}
 	
 	@Override

@@ -24,6 +24,7 @@ import atlantismod.common.entity.base.EntityWhale;
 import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
+import atlantismod.common.item.ItemNecklaceArmor;
 import atlantismod.common.item.ItemTrident;
 import atlantismod.common.playerapi.AtlantisClientPlayerBase;
 import atlantismod.common.playerapi.AtlantisServerPlayerBase;
@@ -88,6 +89,7 @@ public class AtlantisMod {
 	public static BiomeGenBase coralReef;
 	
 	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{2,2,0,0},0);
+	private static EnumArmorMaterial NecklaceArmor = EnumHelper.addArmorMaterial("NECKLACEARMOR",15,new int[]{0,0,0,0},0);
 	private static EnumToolMaterial PearlTool = EnumHelper.addToolMaterial("PEARLTOOL",3,1111,7.0F,2.5F,20);
 	private static EnumToolMaterial Trident = EnumHelper.addToolMaterial("TRIDENTTOOL",1,1000,1.0F,5.0F,8);
 	
@@ -128,7 +130,7 @@ public class AtlantisMod {
 		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
 		atlantisEye = (new ItemAtlantisEye(2244,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
 		scepter = (new Item(2245)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
-		necklace = (new Item(2246)).setUnlocalizedName("necklace").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
+		necklace = (new ItemNecklaceArmor(2246,AtlantisMod.NecklaceArmor,0,1)).setUnlocalizedName("necklace").setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
 		
 		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head").setUnlocalizedName("fishHead");
 		
@@ -241,7 +243,7 @@ public class AtlantisMod {
 		LanguageRegistry.addName(scepter, "Scepter");
 		GameRegistry.registerItem(scepter, "scepter");
 		
-		LanguageRegistry.addName(necklace, "Necklace");
+		LanguageRegistry.addName(necklace, "Atlantis Necklace");
 		GameRegistry.registerItem(necklace, "necklace");
 
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
@@ -295,7 +297,7 @@ public class AtlantisMod {
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand),"  x"," s ","x  ",'x',AtlantisMod.atlantisEye,'s',AtlantisMod.scepter);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.blockPearl),"xxx","xxx","xxx",'x',AtlantisMod.pearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pearl),"x",'x',AtlantisMod.blockPearl);
-		GameRegistry.addRecipe(new ItemStack(AtlantisMod.necklace),"iii","n n"," e ",'i',Item.ingotGold,'n',Item.nuggetGold,'e',AtlantisMod.atlantisEye);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.necklace),"iii","n n"," e ",'i',Item.ingotGold,'n',Item.goldNugget,'e',AtlantisMod.atlantisEye);
 
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.axePearl),"xx ","xs "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pickaxePearl),"xxx"," s "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
