@@ -1,7 +1,7 @@
 package atlantismod.common;
 
-import api.player.client.ClientPlayerAPI;
-import api.player.server.ServerPlayerAPI;
+/*import api.player.client.ClientPlayerAPI;
+import api.player.server.ServerPlayerAPI;*/
 import atlantismod.common.block.BlockAtlantisPortal;
 import atlantismod.common.block.BlockCoral;
 import atlantismod.common.block.BlockRottenPlanks;
@@ -25,8 +25,8 @@ import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
 import atlantismod.common.item.ItemTrident;
-import atlantismod.common.playerapi.AtlantisClientPlayerBase;
-import atlantismod.common.playerapi.AtlantisServerPlayerBase;
+/*import atlantismod.common.playerapi.AtlantisClientPlayerBase;
+import atlantismod.common.playerapi.AtlantisServerPlayerBase;*/
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
@@ -110,8 +110,8 @@ public class AtlantisMod {
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
 	public AtlantisMod() {
-		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
-		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);
+		/*ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
+		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);*/
 	}
 	
 	@EventHandler
