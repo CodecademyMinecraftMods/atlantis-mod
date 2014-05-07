@@ -1,7 +1,7 @@
 package atlantismod.common;
 
-/*import api.player.client.ClientPlayerAPI;
-import api.player.server.ServerPlayerAPI;*/
+import api.player.client.ClientPlayerAPI;
+import api.player.server.ServerPlayerAPI;
 import atlantismod.common.block.BlockAtlantisPortal;
 import atlantismod.common.block.BlockCoral;
 import atlantismod.common.block.BlockRottenPlanks;
@@ -25,8 +25,8 @@ import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
 import atlantismod.common.item.ItemTrident;
-/*import atlantismod.common.playerapi.AtlantisClientPlayerBase;
-import atlantismod.common.playerapi.AtlantisServerPlayerBase;*/
+import atlantismod.common.playerapi.AtlantisClientPlayerBase;
+import atlantismod.common.playerapi.AtlantisServerPlayerBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
@@ -110,8 +110,8 @@ public class AtlantisMod {
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
 	public AtlantisMod() {
-		/*ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
-		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);*/
+		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
+		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);
 	}
 	
 	@EventHandler
@@ -240,6 +240,9 @@ public class AtlantisMod {
 		
 		LanguageRegistry.addName(scepter, "Scepter");
 		GameRegistry.registerItem(scepter, "scepter");
+		
+		LanguageRegistry.addName(necklace, "Necklace");
+		GameRegistry.registerItem(necklace, "necklace");
 
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
 		MinecraftForge.setBlockHarvestLevel(blockRottenPlanks, "axe", 1);
@@ -277,8 +280,6 @@ public class AtlantisMod {
 		GameRegistry.registerItem(shovelPearl, "shovelPearl");
 		LanguageRegistry.addName(swordPearl, "Pearl Sword");
 		GameRegistry.registerItem(swordPearl, "swordPearl");
-		LanguageRegistry.addName(necklace, "Necklace");
-		GameRegistry.registerItem(necklace, "necklace");
 		
 		LanguageRegistry.addName(divingHelmet, "Diving Helmet");
 		GameRegistry.registerItem(divingHelmet, "divingHelmet");
@@ -294,6 +295,7 @@ public class AtlantisMod {
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand),"  x"," s ","x  ",'x',AtlantisMod.atlantisEye,'s',AtlantisMod.scepter);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.blockPearl),"xxx","xxx","xxx",'x',AtlantisMod.pearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pearl),"x",'x',AtlantisMod.blockPearl);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.necklace),"iii","n n"," e ",'i',Item.ingotGold,'n',Item.nuggetGold,'e',AtlantisMod.atlantisEye);
 
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.axePearl),"xx ","xs "," s ",'x',AtlantisMod.pearl,'s',Item.stick);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pickaxePearl),"xxx"," s "," s ",'x',AtlantisMod.pearl,'s',Item.stick);

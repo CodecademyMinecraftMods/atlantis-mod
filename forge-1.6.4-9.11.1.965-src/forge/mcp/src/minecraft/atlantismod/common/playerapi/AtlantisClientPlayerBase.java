@@ -1,4 +1,4 @@
-/*package atlantismod.common.playerapi;
+package atlantismod.common.playerapi;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -45,7 +45,7 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
         if (this.player.isPotionActive(Potion.digSpeed)) f *= 1.0F + (float)(this.player.getActivePotionEffect(Potion.digSpeed).getAmplifier() + 1) * 0.2F;
         if (this.player.isPotionActive(Potion.digSlowdown)) f *= 1.0F - (float)(this.player.getActivePotionEffect(Potion.digSlowdown).getAmplifier() + 1) * 0.2F;
         if (this.player.isInsideOfMaterial(Material.water) && !EnchantmentHelper.getAquaAffinityModifier(this.player)) {
-        	if(stack.itemID == AtlantisMod.axePearl.itemID || stack.itemID == AtlantisMod.pickaxePearl.itemID || stack.itemID == AtlantisMod.shovelPearl.itemID || stack.itemID == AtlantisMod.hoePearl.itemID) {
+        	if(stack != null && (stack.itemID == AtlantisMod.axePearl.itemID || stack.itemID == AtlantisMod.pickaxePearl.itemID || stack.itemID == AtlantisMod.shovelPearl.itemID || stack.itemID == AtlantisMod.hoePearl.itemID)) {
         		f *= 2.0F;
         	} else {
         		f /= 5.0F;
@@ -56,4 +56,4 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
         return (f < 0 ? 0 : f);
 	}
 	
-}*/
+}
