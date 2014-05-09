@@ -8,8 +8,5 @@ public class EntityMermaid extends EntityVillager {
 	public EntityMermaid(World par1World) {
 		super(par1World);
 	}
-	protected void applyEntityAttributes() {
-		
-	}
 
 }

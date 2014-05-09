@@ -10,12 +10,11 @@ import net.minecraft.entity.ai.EntityAIWander;
 import net.minecraft.entity.ai.EntityAIWatchClosest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import atlantismod.common.AtlantisMod;
+
 
 public class EntitySquidman extends EntityAtlantisMob {
-
+	
 	public EntitySquidman(World par1World) {
 		super(par1World);
 		this.experienceValue = 4;

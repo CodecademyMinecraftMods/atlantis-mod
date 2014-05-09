@@ -7,8 +7,5 @@ public class EntityElectricEel extends EntityEel {
 	public EntityElectricEel(World par1World) {
 		super(par1World);
 	}
-	protected void applyEntityAttributes() {
-		
-	}
 
 }

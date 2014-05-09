@@ -8,8 +8,5 @@ public class EntityWhale extends EntityWaterMob {
 	public EntityWhale(World par1World) {
 		super(par1World);
 	}
-	protected void applyEntityAttributes() {
-		
-	}
 
 }

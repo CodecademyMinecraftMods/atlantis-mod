@@ -7,8 +7,5 @@ public class EntitySharkman extends EntityAtlantisMob {
 	public EntitySharkman(World par1World) {
 		super(par1World);
 	}
-	protected void applyEntityAttributes() {
-		
-	}
 
 }

@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 
 public class ModelFish extends ModelBase
 {
-  //fieldss
+  //fields
     ModelRenderer Shape2;
     ModelRenderer Shape1;
     ModelRenderer Shape3;
