@@ -1,5 +1,6 @@
 package atlantismod.common.entity.base;
 
+import atlantismod.common.entity.ai.EntityAIAtlantisSwim;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.EntityAIAttackOnCollide;
 import net.minecraft.entity.ai.EntityAIHurtByTarget;
@@ -18,7 +19,7 @@ public class EntityShark extends EntityAtlantisMob {
 		super(par1World);
 		this.experienceValue = 10;
         this.tasks.addTask(0, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
-        this.tasks.addTask(1, new EntityAIWander(this, 1.0D));
+		this.tasks.addTask(1, new EntityAIAtlantisSwim(this, 1.0D));
         this.tasks.addTask(2, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
         this.tasks.addTask(3, new EntityAILookIdle(this));
         this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));

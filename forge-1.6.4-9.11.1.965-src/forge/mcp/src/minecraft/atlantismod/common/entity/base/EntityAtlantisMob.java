@@ -1,5 +1,6 @@
 package atlantismod.common.entity.base;
 
+import atlantismod.common.entity.ai.EntityAIAtlantisSwim;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;

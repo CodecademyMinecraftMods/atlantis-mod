@@ -14,36 +14,17 @@ public class RenderFish extends RenderLiving {
 
 	protected ModelFish model;
 	private String color;
-	private Random rand = new Random();
+	private boolean valid = false;
+	public static String validColors[] = {"red","green","yellow","brown","blue","orange","purple","silver"};
 	
-	public RenderFish(ModelBase par1ModelBase, float par2) {
+	public RenderFish(ModelBase par1ModelBase, float par2, String par3) {
 		super(par1ModelBase, par2);
 		this.model = (ModelFish)this.mainModel;
-		switch(rand.nextInt(8)) {
-		case 1:
-			this.color = "red";
-			break;
-		case 2:
-			this.color = "green";
-			break;
-		case 3:
-			this.color = "yellow";
-			break;
-		case 4:
-			this.color = "brown";
-			break;
-		case 5:
-			this.color = "blue";
-			break;
-		case 6:
-			this.color = "orange";
-			break;
-		case 7:
-			this.color = "purple";
-			break;
-		default:
-			this.color = "silver";
+		this.color = par3;
+		for(String x : RenderFish.validColors) {
+			if(x.equals(this.color)) this.valid = true;
 		}
+		if(!this.valid) throw new IllegalArgumentException("Exception assigning a color to fish: '"+par3+"' is not a valid color.");
 	}
 
 	@Override
