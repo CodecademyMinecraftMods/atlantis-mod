@@ -12,24 +12,25 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenOverworldShrine extends WorldGenerator {
 	
-	public boolean LocationIsValidSpawn(World world, int i, int j, int k){
-		return (world.getBlockId(i, j, k) != 0);
+	public boolean LocationIsInvalid(World world, int i, int j, int k){
+		return (world.getBlockId(i, j, k) == 0 || world.getBlockId(i, j, k) == Block.waterStill.blockID);
 	}
 
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
+		while(LocationIsInvalid(world, i, j, k) && j > 0) j--;
 		j++;
-		if(LocationIsValidSpawn(world, i, j, k) && LocationIsValidSpawn(world, i, j + 2, k)) {
+		if(!LocationIsInvalid(world, i, j, k) && !LocationIsInvalid(world, i, j + 2, k)) {
 			world.setBlock(i, j, k, Block.blockNetherQuartz.blockID, 2, 3);
 			world.setBlock(i+1, j, k, Block.blockNetherQuartz.blockID, 2, 3);
 			world.setBlock(i-1, j, k, Block.blockNetherQuartz.blockID, 2, 3);
 			world.setBlock(i, j, k+1, Block.blockNetherQuartz.blockID, 2, 3);
 			world.setBlock(i, j, k-1, Block.blockNetherQuartz.blockID, 2, 3);
-	        world.setBlock(i, j, k, Block.chest.blockID, 2, 2);
-	        WeightedRandomChestContent[] content = new WeightedRandomChestContent[] {new WeightedRandomChestContent(AtlantisMod.atlantisWand.itemID, 1, 1, 1, 1)};
+	        world.setBlock(i, j+1, k, Block.chest.blockID, 2, 2);
+	        WeightedRandomChestContent[] content = new WeightedRandomChestContent[] {new WeightedRandomChestContent(AtlantisMod.atlantisEye.itemID, 1, 1, 1, 1)};
 	        TileEntityChest tileentitychest = (TileEntityChest)world.getBlockTileEntity(i, j, k);
 	        if (tileentitychest != null) WeightedRandomChestContent.generateChestContents(rand, content, tileentitychest, 1);
+	        return true;
 		}
 		return false;
 	}

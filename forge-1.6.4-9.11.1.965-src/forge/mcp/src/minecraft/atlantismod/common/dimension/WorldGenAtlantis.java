@@ -35,6 +35,7 @@ public class WorldGenAtlantis implements IWorldGenerator {
 	}
 
 	private void generateAtlantis(World world, Random random, int i, int j) {
+		for(int k=0;k<2;k++) (new WorldGenMinable(AtlantisMod.oreAtlanteum.blockID,7)).generate(world,random,i + random.nextInt(16),random.nextInt(16),j + random.nextInt(16));
 		if(random.nextInt(500) == 1) (new WorldGenShipwreck()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 		for(int x=0;x<=6;x++) (new WorldGenBubble2()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
 		(new WorldGenBubble3()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
@@ -45,7 +46,7 @@ public class WorldGenAtlantis implements IWorldGenerator {
 	private void generateEnd(World world, Random random, int i, int j) {}
 
 	private void generateSurface(World world, Random random, int i, int j) {
-		if(random.nextInt(444) == 1) (new WorldGenOverworldShrine()).generate(world, random, i, 80, j);
+		if(random.nextInt(222) == 1) (new WorldGenOverworldShrine()).generate(world, random, i, 80, j);
 	}
 
 	private void generateNether(World world, Random random, int i, int j) {}
