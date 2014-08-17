@@ -1,20 +1,19 @@
 package atlantismod.common.thedeep;
 
-import java.util.ArrayList;
-import atlantismod.common.AtlantisMod;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
+import atlantismod.common.AtlantisMod;
 
 public class WorldProviderTheDeep extends WorldProvider {
 
 	@Override
 	public String getDimensionName() {
-		return "Atlantis";
+		return "The Deep";
 	}
 	
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerTheDeep(worldObj.getSeed(), terrainType);
+		this.worldChunkMgr = new WorldChunkManagerHell(AtlantisMod.darkOcean, 0.0F, 0.0F);
 		this.dimensionId = AtlantisMod.dimensionDeepID;
 	}
 	
