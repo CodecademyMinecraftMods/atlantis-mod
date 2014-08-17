@@ -1,60 +1,55 @@
 TODO
 =====
 **Dimensions**
- - Atlantis
  - "The Deep"
 
 **Mobs**
- - Squidman
- - Giant Squid
+ - Finish Giant Squid
  - Angler Fish
- - Whale
- - Kraken
+ - Blue Whale
+ - Killer Whale
+ - Sperm Whale
  - Eels
- - Shark
- - Sharkman
- - Many colors of fish
- - Many species of fish
- - Mermaid
+ - Finish Shark
+ - Finish Colored Fish
  - Clam
- - Luminescent mobs
+ - Moorish Idol
+ - Clownfish
+ - Flame Angel
+ - Royal Gramma
+ - Yellow Tang
+ - Regal Blue Tang
+ - Tiger Shark
+ - Hammerhead
+ - Dolphin
+ - Swordfish
+ - Tuna
+ - Catfish
+ - Sea Turtle
+ - Sea Horse
+ - Jellyfish
+ - Seacreeper
 
 **Blocks**
- - Many colors of coral
- - Rotten Planks
- - Block of Pearl
- - Atlantium Ore
- - Block of Atlantium
  - Bubble Door
- - Deep Sand
+ - Seaweed
+ - Pebble
 
 **Items**
- - Atlantis Wand
- - Atlantium Tools
- - Eye of Atlantis
- - Scepter
- - Atlantis Necklace
- - Trident
- - Diving Helmet
- - Scuba Suit
- - Oxygen Tank
- - Flippers
+ - Finish Trident
+ - Shark Teeth
+ - Triton
  - Lots of kinds of meat
 
 **Structures**
- - Shipwreck
- - Atlantis City
- - Bubble 2 x 2 x 2
- - Bubble 3 x 3 x 3
+ - Finish Atlantis City
  - Grotto
  - Sunken Submarine
  - Atlantean Ruins
- - Overworld Shrine
+ - Finish Overworld Shrine
  - Atlantis Shrine
 
 **Biomes**
- - Atlantean Ocean
- - Coral Reef
  - Deep Ocean
 
 **Bosses**
@@ -68,34 +63,6 @@ TODO
  - Neptune energy
 
 **Future Versions**
- - Update to 1.7
+ - Update to 1.7 followed by 1.8
  - Colored Light API
  - Better Fishing
-
-OTHER IDEAS
-===========
-moorish idol
-clownfish
-flame angel
-royal gramma
-yellow tang
-regal blue tang
-blue whale
-killer whale
-sperm whale
-dolphin
-tiger shark
-hammerhead
-swordfish
-tuna
-catfish
-seahorse
-sea turtle
-jellyfish
-seacreeper
-shark teeth
-jellyfish drop slimeballs
-triton (spawn lightning at location right clicked at, uses it quickly?)
-seaweed
-seaweed forest?
-pebble
