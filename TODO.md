@@ -1,7 +1,7 @@
 TODO
 =====
 **Dimensions**
- - "The Deep"
+ - "The Deep" [Claimed by @Graeme22]
 
 **Mobs**
  - Finish Giant Squid
@@ -50,14 +50,14 @@ TODO
  - Atlantis Shrine
 
 **Biomes**
- - Deep Ocean
+ - Deep Ocean [Claimed by @Graeme22]
 
 **Bosses**
  - King of Atlantis
  - Neptune
 
 **Other**
- - Trenches
+ - Trenches [Claimed by @Graeme22]
  - Mob Spawners
  - Mod Website
  - Neptune energy
