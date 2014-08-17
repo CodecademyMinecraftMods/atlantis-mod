@@ -7,7 +7,7 @@ import net.minecraft.world.gen.layer.IntCache;
 
 public class GenLayerBiomesAtlantis extends GenLayer {
 
-	protected BiomeGenBase[] allowedBiomes = {AtlantisMod.atlantisOcean, AtlantisMod.coralReef};
+	protected BiomeGenBase[] allowedBiomes = {AtlantisMod.atlantisOcean, AtlantisMod.coralReef, AtlantisMod.deepOcean};
 	
 	public GenLayerBiomesAtlantis(long seed, GenLayer genlayer) {
 		super(seed);

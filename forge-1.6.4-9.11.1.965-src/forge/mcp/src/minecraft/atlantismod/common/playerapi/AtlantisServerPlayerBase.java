@@ -3,9 +3,11 @@ package atlantismod.common.playerapi;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.stats.StatList;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.common.ForgeHooks;
@@ -13,6 +15,8 @@ import net.minecraftforge.event.ForgeEventFactory;
 import api.player.server.ServerPlayerAPI;
 import api.player.server.ServerPlayerBase;
 import atlantismod.common.AtlantisMod;
+import atlantismod.common.dimension.TeleporterAtlantis;
+import atlantismod.common.thedeep.TeleporterTheDeep;
 
 public class AtlantisServerPlayerBase extends ServerPlayerBase {
 
@@ -43,6 +47,17 @@ public class AtlantisServerPlayerBase extends ServerPlayerBase {
 		ItemStack chest = this.player.inventory.armorItemInSlot(2);
 		if(!this.player.isInsideOfMaterial(Material.water) && chest != null && chest.itemID == AtlantisMod.necklace.itemID) {
 			this.player.inventory.armorInventory[2].damageItem(-5, this.player);
+		}
+		if(this.player.posY < 7 && this.player.isInsideOfMaterial(Material.water)) {
+			MinecraftServer server = MinecraftServer.getServer();
+			if(this.player.dimension == AtlantisMod.dimensionID) {
+				this.player.mcServer.getConfigurationManager().transferPlayerToDimension(this.player, AtlantisMod.dimensionDeepID, new TeleporterTheDeep(server.worldServerForDimension(AtlantisMod.dimensionDeepID)));
+			}
+		} else if(this.player.posY > 60/*?*/ && this.player.isInsideOfMaterial(Material.water)) {
+			MinecraftServer server = MinecraftServer.getServer();
+			if(this.player.dimension == AtlantisMod.dimensionDeepID) {
+				this.player.mcServer.getConfigurationManager().transferPlayerToDimension(this.player, AtlantisMod.dimensionID, new TeleporterAtlantis(server.worldServerForDimension(AtlantisMod.dimensionID)));
+			}
 		}
 	}
 	

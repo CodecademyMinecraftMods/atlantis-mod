@@ -31,6 +31,8 @@ public class WorldGenAtlantis implements IWorldGenerator {
 		    break;
 		case AtlantisMod.dimensionID:
 			generateAtlantis(world, random, chunkX * 16, chunkZ * 16);
+		case AtlantisMod.dimensionDeepID:
+			generateTheDeep(world, random, chunkX * 16, chunkZ * 16);
 		}
 	}
 
@@ -42,6 +44,8 @@ public class WorldGenAtlantis implements IWorldGenerator {
 		for(int x=0;x<=2;x++) (new WorldGenGlowstone()).generate(world, random, i + random.nextInt(15), 55, j + random.nextInt(15));
 		if(random.nextInt(600) == 1) (new WorldGenAtlantisCity()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 	}
+	
+	private void generateTheDeep(World world, Random random, int i, int j) {}
 
 	private void generateEnd(World world, Random random, int i, int j) {}
 

@@ -1,33 +1,5 @@
 package atlantismod.common;
 
-import api.player.client.ClientPlayerAPI;
-import api.player.server.ServerPlayerAPI;
-import atlantismod.common.block.BlockAtlantisPortal;
-import atlantismod.common.block.BlockCoral;
-import atlantismod.common.block.BlockRottenPlanks;
-import atlantismod.common.dimension.BiomeGenAtlantisOcean;
-import atlantismod.common.dimension.BiomeGenCoralReef;
-import atlantismod.common.dimension.WorldGenAtlantis;
-import atlantismod.common.dimension.WorldProviderAtlantis;
-import atlantismod.common.entity.base.EntityClam;
-import atlantismod.common.entity.base.EntityMermaid;
-import atlantismod.common.entity.base.EntityShark;
-import atlantismod.common.entity.base.EntityEel;
-import atlantismod.common.entity.base.EntityElectricEel;
-import atlantismod.common.entity.base.EntityKraken;
-import atlantismod.common.entity.base.EntityAnglerFish;
-import atlantismod.common.entity.base.EntityAtlantisFish;
-import atlantismod.common.entity.base.EntityGiantSquid;
-import atlantismod.common.entity.base.EntitySharkman;
-import atlantismod.common.entity.base.EntitySquidman;
-import atlantismod.common.entity.base.EntityWhale;
-import atlantismod.common.item.ItemAtlantisEye;
-import atlantismod.common.item.ItemAtlantisWand;
-import atlantismod.common.item.ItemDivingArmor;
-import atlantismod.common.item.ItemNecklaceArmor;
-import atlantismod.common.item.ItemTrident;
-import atlantismod.common.playerapi.AtlantisClientPlayerBase;
-import atlantismod.common.playerapi.AtlantisServerPlayerBase;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
@@ -48,10 +20,40 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraft.world.biome.BiomeGenOcean;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
+import api.player.client.ClientPlayerAPI;
+import api.player.server.ServerPlayerAPI;
+import atlantismod.common.block.BlockAtlantisPortal;
+import atlantismod.common.block.BlockCoral;
+import atlantismod.common.block.BlockRottenPlanks;
+import atlantismod.common.dimension.BiomeGenAtlantisOcean;
+import atlantismod.common.dimension.BiomeGenCoralReef;
+import atlantismod.common.dimension.BiomeGenDeepOcean;
+import atlantismod.common.dimension.WorldGenAtlantis;
+import atlantismod.common.dimension.WorldProviderAtlantis;
+import atlantismod.common.entity.base.EntityAnglerFish;
+import atlantismod.common.entity.base.EntityAtlantisFish;
+import atlantismod.common.entity.base.EntityClam;
+import atlantismod.common.entity.base.EntityEel;
+import atlantismod.common.entity.base.EntityElectricEel;
+import atlantismod.common.entity.base.EntityGiantSquid;
+import atlantismod.common.entity.base.EntityKraken;
+import atlantismod.common.entity.base.EntityMermaid;
+import atlantismod.common.entity.base.EntityShark;
+import atlantismod.common.entity.base.EntitySharkman;
+import atlantismod.common.entity.base.EntitySquidman;
+import atlantismod.common.entity.base.EntityWhale;
+import atlantismod.common.item.ItemAtlantisEye;
+import atlantismod.common.item.ItemAtlantisWand;
+import atlantismod.common.item.ItemDivingArmor;
+import atlantismod.common.item.ItemNecklaceArmor;
+import atlantismod.common.item.ItemTrident;
+import atlantismod.common.playerapi.AtlantisClientPlayerBase;
+import atlantismod.common.playerapi.AtlantisServerPlayerBase;
+import atlantismod.common.thedeep.BiomeGenTheDeep;
+import atlantismod.common.thedeep.WorldProviderTheDeep;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -60,9 +62,9 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.common.registry.EntityRegistry;
 
 /**
  * 
@@ -84,10 +86,14 @@ public class AtlantisMod {
     public static CommonProxy proxy;
 	
 	public static final int dimensionID = 22;
+	public static final int dimensionDeepID = 23;
 	
 	public static BiomeGenBase atlantisOcean;
 	public static BiomeGenBase coralReef;
-	public static BiomeGenBase trench;//add this
+	public static BiomeGenBase deepOcean;
+	public static BiomeGenBase darkOcean;
+	
+	public static BiomeGenBase[] biomes;
 	
 	private static EnumArmorMaterial DivingSuit = EnumHelper.addArmorMaterial("DIVINGARMOR",15,new int[]{2,2,0,0},0);
 	private static EnumArmorMaterial NecklaceArmor = EnumHelper.addArmorMaterial("NECKLACEARMOR",15,new int[]{0,0,0,0},0);
@@ -175,61 +181,68 @@ public class AtlantisMod {
 		
 		atlantisOcean = (new BiomeGenAtlantisOcean(22)).setBiomeName("Atlantean Ocean").setMinMaxHeight(-1.9F, 0.1F);
 		coralReef = (new BiomeGenCoralReef(23)).setBiomeName("Coral Reef").setMinMaxHeight(-1.9F, 0.1F);
+		deepOcean = (new BiomeGenDeepOcean(24)).setBiomeName("Deepest Ocean").setMinMaxHeight(-4.0F, 0.1F);
+		darkOcean = (new BiomeGenTheDeep(25)).setBiomeName("Dark Ocean").setMinMaxHeight(-2.2F, 0.1F);
+		
+		biomes = new BiomeGenBase[]{AtlantisMod.atlantisOcean,AtlantisMod.coralReef,AtlantisMod.deepOcean};
 	}
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		proxy.registerRenderers();
 		GameRegistry.registerWorldGenerator(new WorldGenAtlantis());
+		
 		DimensionManager.registerProviderType(AtlantisMod.dimensionID, WorldProviderAtlantis.class, false);
 		DimensionManager.registerDimension(AtlantisMod.dimensionID, AtlantisMod.dimensionID);
+		DimensionManager.registerProviderType(AtlantisMod.dimensionDeepID, WorldProviderTheDeep.class, false);
+		DimensionManager.registerDimension(AtlantisMod.dimensionDeepID, AtlantisMod.dimensionDeepID);
 		
 		EntityRegistry.registerModEntity(EntityAtlantisFish.class,"Fish",1,this,40,3,true);
-		EntityRegistry.addSpawn(EntityAtlantisFish.class,10,3,5,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityAtlantisFish.class,10,3,5,EnumCreatureType.waterCreature,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Fish.name","Fish");
 		
 		EntityRegistry.registerModEntity(EntitySquidman.class,"Squidman",2,this,40,3,true);
-		EntityRegistry.addSpawn(EntitySquidman.class,6,2,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntitySquidman.class,6,2,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Squidman.name","Squidman");
 		
 		EntityRegistry.registerModEntity(EntityGiantSquid.class,"Giant Squid",3,this,40,3,true);
-		EntityRegistry.addSpawn(EntityGiantSquid.class,3,1,1,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityGiantSquid.class,3,1,1,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Giant Squid.name","Giant Squid");
 		
 		EntityRegistry.registerModEntity(EntityAnglerFish.class,"Angler Fish",4,this,40,3,true);
-		EntityRegistry.addSpawn(EntityAnglerFish.class,4,1,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityAnglerFish.class,4,1,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Angler Fish.name","Angler Fish");
 		
 		EntityRegistry.registerModEntity(EntityWhale.class,"Whale",5,this,40,3,true);
-		EntityRegistry.addSpawn(EntityWhale.class,3,1,2,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityWhale.class,3,1,2,EnumCreatureType.waterCreature,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Whale.name","Whale");
 		
 		EntityRegistry.registerModEntity(EntityKraken.class,"Kraken",6,this,80,3,true);
-		EntityRegistry.addSpawn(EntityKraken.class,1,1,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityKraken.class,1,1,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Kraken.name","Kraken");
 		
 		EntityRegistry.registerModEntity(EntityEel.class,"Eel",7,this,40,3,true);
-		EntityRegistry.addSpawn(EntityEel.class,7,1,5,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityEel.class,7,1,5,EnumCreatureType.waterCreature,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Eel.name","Eel");
 
 		EntityRegistry.registerModEntity(EntityElectricEel.class,"Electric Eel",8,this,40,3,true);
-		EntityRegistry.addSpawn(EntityElectricEel.class,4,1,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityElectricEel.class,4,1,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Electric Eel.name","Electric Eel");
 		
 		EntityRegistry.registerModEntity(EntitySharkman.class,"Sharkman",9,this,40,3,true);
-		EntityRegistry.addSpawn(EntitySharkman.class,6,2,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntitySharkman.class,6,2,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Sharkman.name","Sharkman");
 		
 		EntityRegistry.registerModEntity(EntityShark.class,"Shark",10,this,40,3,true);
-		EntityRegistry.addSpawn(EntityShark.class,4,1,3,EnumCreatureType.monster,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityShark.class,4,1,3,EnumCreatureType.monster,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Shark.name","Shark");
 		
 		EntityRegistry.registerModEntity(EntityMermaid.class,"Mermaid",11,this,40,3,true);
-		EntityRegistry.addSpawn(EntityMermaid.class,0,2,10,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityMermaid.class,0,2,10,EnumCreatureType.waterCreature,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Mermaid.name","Mermaid");
 		
 		EntityRegistry.registerModEntity(EntityClam.class,"Clam",12,this,40,3,true);
-		EntityRegistry.addSpawn(EntityClam.class,8,1,1,EnumCreatureType.waterCreature,AtlantisMod.atlantisOcean,AtlantisMod.coralReef);
+		EntityRegistry.addSpawn(EntityClam.class,8,1,1,EnumCreatureType.waterCreature,AtlantisMod.biomes);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Clam.name","Clam");
 		
 		registerEntityEgg(EntitySquidman.class,0xffff66,0x000099);
