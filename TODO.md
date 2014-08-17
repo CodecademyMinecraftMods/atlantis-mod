@@ -1,8 +1,5 @@
 TODO
 =====
-**Dimensions**
- - "The Deep" [Claimed by @Graeme22]
-
 **Mobs**
  - Finish Giant Squid
  - Angler Fish
@@ -48,9 +45,6 @@ TODO
  - Atlantean Ruins
  - Finish Overworld Shrine
  - Atlantis Shrine
-
-**Biomes**
- - Deep Ocean [Claimed by @Graeme22]
 
 **Bosses**
  - King of Atlantis
