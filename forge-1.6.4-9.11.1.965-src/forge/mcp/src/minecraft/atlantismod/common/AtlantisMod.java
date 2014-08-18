@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockOre;
 import net.minecraft.block.BlockOreStorage;
 import net.minecraft.block.BlockSand;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityEggInfo;
@@ -48,6 +49,7 @@ import atlantismod.common.entity.base.EntityWhale;
 import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
+import atlantismod.common.item.ItemAtlanteumArmor;
 import atlantismod.common.item.ItemNecklaceArmor;
 import atlantismod.common.item.ItemTrident;
 import atlantismod.common.playerapi.AtlantisClientPlayerBase;
@@ -99,7 +101,7 @@ public class AtlantisMod {
 	private static EnumArmorMaterial NecklaceArmor = EnumHelper.addArmorMaterial("NECKLACEARMOR",15,new int[]{0,0,0,0},0);
 	private static EnumArmorMaterial AtlanteumArmor = EnumHelper.addArmorMaterial("ATLANTISARMOR",25,new int[]{3,7,5,2},15);
 	private static EnumToolMaterial PearlTool = EnumHelper.addToolMaterial("PEARLTOOL",3,1111,7.0F,2.5F,20);
-	private static EnumToolMaterial AtlanteumTool = EnumHelper.addToolMaterial("ATLANTEUMTOOL",3,1881,7.5F,3.0F,15);
+	private static EnumToolMaterial AtlanteumTool = EnumHelper.addToolMaterial("ATLANTISTOOL",2,1881,7.5F,2.5F,15);
 	private static EnumToolMaterial Trident = EnumHelper.addToolMaterial("TRIDENTTOOL",1,1000,1.0F,5.0F,8);
 	
 	public static CreativeTabs tabAtlantis;
@@ -120,9 +122,13 @@ public class AtlantisMod {
 	
 	public static Block oreAtlanteum, blockAtlanteum;
 	
+	public static Block pebble;
+	
 	public static Item atlanteum, nuggetAtlanteum;
 	
 	public static ItemArmor divingHelmet, scubaSuit, oxygenTank, flippers;
+	
+	public static ItemArmor helmetAtlanteum, chestAtlanteum, legsAtlanteum, bootsAtlanteum;
 	
 	public static Block blockCoralOrange, blockCoralGreen, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	
@@ -138,51 +144,58 @@ public class AtlantisMod {
 		portalAtlantisBlock = (BlockAtlantisPortal)(new BlockAtlantisPortal(2222)).setUnlocalizedName("portalAtlantisBlock").setTextureName("portal");
 		
 		deepSandBlock = (new BlockSand(203)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
-		blockRottenPlanks = (new BlockRottenPlanks(2224)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
+		blockRottenPlanks = (new BlockRottenPlanks(2223)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
 		
-		pearl = (new Item(2225)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
-		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2226)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
-		trident = (new ItemTrident(2238,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
-		atlantisEye = (new ItemAtlantisEye(2244,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
-		scepter = (new Item(2245)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
-		necklace = (new ItemNecklaceArmor(2246,AtlantisMod.NecklaceArmor,0,1)).setUnlocalizedName("necklace").setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
+		pearl = (new Item(2224)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
+		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2225)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
+		trident = (new ItemTrident(2226,AtlantisMod.Trident)).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:trident").setUnlocalizedName("trident").setMaxStackSize(1);
+		atlantisEye = (new ItemAtlantisEye(2227,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
+		scepter = (new Item(2228)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
+		necklace = (ItemNecklaceArmor)(new ItemNecklaceArmor(2229,AtlantisMod.NecklaceArmor,0,1)).setUnlocalizedName("necklace").setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
 		
-		fishHead = (new Item(2236)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head");
+		fishHead = (new Item(2230)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head");
 		
-		blockPearl = (new BlockOreStorage(2237)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockPearl").setTextureName("atlantismod:pearl_block").setCreativeTab(AtlantisMod.tabAtlantis);
-		oreAtlanteum = (new BlockOre(2249)).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("oreAtlanteum").setTextureName("atlantismod:atlanteum_ore").setCreativeTab(AtlantisMod.tabAtlantis);
-		blockAtlanteum = (new BlockOreStorage(2250)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockAtlanteum").setTextureName("atlantismod:atlanteum_block").setCreativeTab(AtlantisMod.tabAtlantis);
+		blockPearl = (new BlockOreStorage(2231)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockPearl").setTextureName("atlantismod:pearl_block").setCreativeTab(AtlantisMod.tabAtlantis);
+		oreAtlanteum = (new BlockOre(2232)).setHardness(3.0F).setResistance(5.0F).setUnlocalizedName("oreAtlanteum").setTextureName("atlantismod:atlanteum_ore").setCreativeTab(AtlantisMod.tabAtlantis);
+		blockAtlanteum = (new BlockOreStorage(2233)).setHardness(3.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setUnlocalizedName("blockAtlanteum").setTextureName("atlantismod:atlanteum_block").setCreativeTab(AtlantisMod.tabAtlantis);
 		
-		atlanteum = (new Item(2251)).setUnlocalizedName("atlanteum").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlanteum");
-		nuggetAtlanteum = (new Item(2253)).setUnlocalizedName("nuggetAtlanteum").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlanteum_nugget");
+		atlanteum = (new Item(2234)).setUnlocalizedName("atlanteum").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlanteum");
+		nuggetAtlanteum = (new Item(2235)).setUnlocalizedName("nuggetAtlanteum").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlanteum_nugget");
 		
-		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2227,AtlantisMod.DivingSuit,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("divingHelmet").setTextureName("atlantismod:diving_helmet");
-		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2228,AtlantisMod.DivingSuit,0,1)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("scubaSuit").setTextureName("atlantismod:scuba_suit");
-		oxygenTank = (ItemDivingArmor)(new ItemDivingArmor(2229,AtlantisMod.DivingSuit,0,2)).setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("oxygenTank").setTextureName("atlantismod:oxygen_tank");
-		flippers = (ItemDivingArmor)(new ItemDivingArmor(2230,AtlantisMod.DivingSuit,0,3)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("flippers").setTextureName("atlantismod:flippers");
+		divingHelmet = (ItemDivingArmor)(new ItemDivingArmor(2236,AtlantisMod.DivingSuit,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("divingHelmet").setTextureName("atlantismod:diving_helmet");
+		scubaSuit = (ItemDivingArmor)(new ItemDivingArmor(2237,AtlantisMod.DivingSuit,0,1)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("scubaSuit").setTextureName("atlantismod:scuba_suit");
+		oxygenTank = (ItemDivingArmor)(new ItemDivingArmor(2238,AtlantisMod.DivingSuit,0,2)).setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("oxygenTank").setTextureName("atlantismod:oxygen_tank");
+		flippers = (ItemDivingArmor)(new ItemDivingArmor(2239,AtlantisMod.DivingSuit,0,3)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("flippers").setTextureName("atlantismod:flippers");
 		
-		blockCoralOrange = (new BlockCoral(2231)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralOrange").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:orange_coral");
-		blockCoralGreen = (new BlockCoral(2232)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralGreen").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:green_coral");
+		blockCoralOrange = (new BlockCoral(2240)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralOrange").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:orange_coral");
+		blockCoralGreen = (new BlockCoral(2241)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralGreen").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:green_coral");
 		blockCoralRed = (new BlockCoral(205)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralRed").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:red_coral");
-		blockCoralPurple = (new BlockCoral(2234)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralPurple").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:purple_coral");
-		blockCoralYellow = (new BlockCoral(2235)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralYellow").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:yellow_coral");
+		blockCoralPurple = (new BlockCoral(2242)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralPurple").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:purple_coral");
+		blockCoralYellow = (new BlockCoral(2243)).setHardness(0.1F).setResistance(0.1F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockCoralYellow").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:yellow_coral");
 		
-		axePearl = (new ItemAxe(2239,AtlantisMod.PearlTool)).setUnlocalizedName("axePearl").setTextureName("atlantismod:pearl_axe").setCreativeTab(AtlantisMod.tabAtlantis);
-		pickaxePearl = (new ItemPickaxe(2240,AtlantisMod.PearlTool)).setUnlocalizedName("pickaxePearl").setTextureName("atlantismod:pearl_pickaxe").setCreativeTab(AtlantisMod.tabAtlantis);
-		hoePearl = (new ItemHoe(2241,AtlantisMod.PearlTool)).setUnlocalizedName("hoePearl").setTextureName("atlantismod:pearl_hoe").setCreativeTab(AtlantisMod.tabAtlantis);
-		shovelPearl = (new ItemSpade(2242,AtlantisMod.PearlTool)).setUnlocalizedName("shovelPearl").setTextureName("atlantismod:pearl_shovel").setCreativeTab(AtlantisMod.tabAtlantis);
-		swordPearl = (new ItemSword(2243,AtlantisMod.PearlTool)).setUnlocalizedName("swordPearl").setTextureName("atlantismod:pearl_sword").setCreativeTab(AtlantisMod.tabAtlantis);
+		pebble = (new Block(2244,Material.sand)).setHardness(2.0F).setResistance(5.0F).setStepSound(Block.soundGravelFootstep).setUnlocalizedName("pebble").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pebble");
 		
-		axeAtlanteum = (new ItemAxe(2244,AtlantisMod.AtlanteumTool)).setUnlocalizedName("axeAtlanteum").setTextureName("atlantismod:atlanteum_axe").setCreativeTab(AtlantisMod.tabAtlantis);
-		pickaxeAtlanteum = (new ItemPickaxe(2245,AtlantisMod.AtlanteumTool)).setUnlocalizedName("pickaxeAtlanteum").setTextureName("atlantismod:atlanteum_pickaxe").setCreativeTab(AtlantisMod.tabAtlantis);
-		hoeAtlanteum = (new ItemHoe(2246,AtlantisMod.AtlanteumTool)).setUnlocalizedName("hoeAtlanteum").setTextureName("atlantismod:atlanteum_hoe").setCreativeTab(AtlantisMod.tabAtlantis);
-		shovelAtlanteum = (new ItemSpade(2247,AtlantisMod.AtlanteumTool)).setUnlocalizedName("shovelAtlanteum").setTextureName("atlantismod:atlanteum_shovel").setCreativeTab(AtlantisMod.tabAtlantis);
-		swordAtlanteum = (new ItemSword(2248,AtlantisMod.AtlanteumTool)).setUnlocalizedName("swordAtlanteum").setTextureName("atlantismod:atlanteum_sword").setCreativeTab(AtlantisMod.tabAtlantis);
+		axePearl = (new ItemAxe(2245,AtlantisMod.PearlTool)).setUnlocalizedName("axePearl").setTextureName("atlantismod:pearl_axe").setCreativeTab(AtlantisMod.tabAtlantis);
+		pickaxePearl = (new ItemPickaxe(2246,AtlantisMod.PearlTool)).setUnlocalizedName("pickaxePearl").setTextureName("atlantismod:pearl_pickaxe").setCreativeTab(AtlantisMod.tabAtlantis);
+		hoePearl = (new ItemHoe(2247,AtlantisMod.PearlTool)).setUnlocalizedName("hoePearl").setTextureName("atlantismod:pearl_hoe").setCreativeTab(AtlantisMod.tabAtlantis);
+		shovelPearl = (new ItemSpade(2248,AtlantisMod.PearlTool)).setUnlocalizedName("shovelPearl").setTextureName("atlantismod:pearl_shovel").setCreativeTab(AtlantisMod.tabAtlantis);
+		swordPearl = (new ItemSword(2249,AtlantisMod.PearlTool)).setUnlocalizedName("swordPearl").setTextureName("atlantismod:pearl_sword").setCreativeTab(AtlantisMod.tabAtlantis);
+		
+		axeAtlanteum = (new ItemAxe(2250,AtlantisMod.AtlanteumTool)).setUnlocalizedName("axeAtlanteum").setTextureName("atlantismod:atlanteum_axe").setCreativeTab(AtlantisMod.tabAtlantis);
+		pickaxeAtlanteum = (new ItemPickaxe(2251,AtlantisMod.AtlanteumTool)).setUnlocalizedName("pickaxeAtlanteum").setTextureName("atlantismod:atlanteum_pickaxe").setCreativeTab(AtlantisMod.tabAtlantis);
+		hoeAtlanteum = (new ItemHoe(2252,AtlantisMod.AtlanteumTool)).setUnlocalizedName("hoeAtlanteum").setTextureName("atlantismod:atlanteum_hoe").setCreativeTab(AtlantisMod.tabAtlantis);
+		shovelAtlanteum = (new ItemSpade(2253,AtlantisMod.AtlanteumTool)).setUnlocalizedName("shovelAtlanteum").setTextureName("atlantismod:atlanteum_shovel").setCreativeTab(AtlantisMod.tabAtlantis);
+		swordAtlanteum = (new ItemSword(2254,AtlantisMod.AtlanteumTool)).setUnlocalizedName("swordAtlanteum").setTextureName("atlantismod:atlanteum_sword").setCreativeTab(AtlantisMod.tabAtlantis);
+		
+		helmetAtlanteum = (ItemAtlanteumArmor)(new ItemAtlanteumArmor(2255,AtlantisMod.AtlanteumArmor,0,0)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("helmetAtlanteum").setTextureName("atlantismod:atlanteum_helmet");
+		chestAtlanteum = (ItemAtlanteumArmor)(new ItemAtlanteumArmor(2256,AtlantisMod.AtlanteumArmor,0,1)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("chestAtlanteum").setTextureName("atlantismod:atlanteum_chestplate");
+		legsAtlanteum = (ItemAtlanteumArmor)(new ItemAtlanteumArmor(2257,AtlantisMod.AtlanteumArmor,0,2)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("legsAtlanteum").setTextureName("atlantismod:atlanteum_leggings");
+		bootsAtlanteum = (ItemAtlanteumArmor)(new ItemAtlanteumArmor(2258,AtlantisMod.AtlanteumArmor,0,3)).setCreativeTab(AtlantisMod.tabAtlantis).setMaxStackSize(1).setUnlocalizedName("bootsAtlanteum").setTextureName("atlantismod:atlanteum_boots");
 		
 		atlantisOcean = (new BiomeGenAtlantisOcean(22)).setBiomeName("Atlantean Ocean").setMinMaxHeight(-1.9F, 0.1F);
 		coralReef = (new BiomeGenCoralReef(23)).setBiomeName("Coral Reef").setMinMaxHeight(-1.9F, 0.1F);
-		deepOcean = (new BiomeGenDeepOcean(24)).setBiomeName("Deepest Ocean").setMinMaxHeight(-4.0F, 0.1F);
-		darkOcean = (new BiomeGenTheDeep(25)).setBiomeName("Dark Ocean").setMinMaxHeight(-2.2F, 0.1F);
+		deepOcean = (new BiomeGenDeepOcean(24)).setBiomeName("Deepest Ocean").setMinMaxHeight(-2.0F, 0.1F);
+		darkOcean = (new BiomeGenTheDeep(25)).setBiomeName("Dark Ocean").setMinMaxHeight(-1.9F, 0.1F);
 		
 		biomes = new BiomeGenBase[]{AtlantisMod.atlantisOcean,AtlantisMod.coralReef,AtlantisMod.deepOcean};
 	}
@@ -218,7 +231,7 @@ public class AtlantisMod {
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Whale.name","Whale");
 		
 		EntityRegistry.registerModEntity(EntityKraken.class,"Kraken",6,this,80,3,true);
-		EntityRegistry.addSpawn(EntityKraken.class,1,1,3,EnumCreatureType.monster,AtlantisMod.biomes);
+		EntityRegistry.addSpawn(EntityKraken.class,1,1,2,EnumCreatureType.monster,AtlantisMod.darkOcean);
 		LanguageRegistry.instance().addStringLocalization("entity.AtlantisMod.Kraken.name","Kraken");
 		
 		EntityRegistry.registerModEntity(EntityEel.class,"Eel",7,this,40,3,true);
@@ -311,6 +324,9 @@ public class AtlantisMod {
 		LanguageRegistry.addName(blockCoralYellow,"Yellow Coral");
 		GameRegistry.registerBlock(blockCoralYellow,"blockCoralYellow");
 		
+		LanguageRegistry.addName(pebble, "Pebble");
+		GameRegistry.registerBlock(pebble, "pebble");
+		
 		LanguageRegistry.addName(axePearl, "Pearl Axe");
 		GameRegistry.registerItem(axePearl, "axePearl");
 		LanguageRegistry.addName(pickaxePearl, "Pearl Pickaxe");
@@ -346,6 +362,15 @@ public class AtlantisMod {
 		GameRegistry.registerItem(oxygenTank, "oxygenTank");
 		LanguageRegistry.addName(flippers, "Flippers");
 		GameRegistry.registerItem(flippers, "flippers");
+		
+		LanguageRegistry.addName(helmetAtlanteum, "Atlanteum Helmet");
+		GameRegistry.registerItem(helmetAtlanteum, "helmetAtlanteum");
+		LanguageRegistry.addName(chestAtlanteum, "Atlanteum Chestplate");
+		GameRegistry.registerItem(chestAtlanteum, "chestAtlanteum");
+		LanguageRegistry.addName(legsAtlanteum, "Atlanteum Leggings");
+		GameRegistry.registerItem(legsAtlanteum, "legsAtlanteum");
+		LanguageRegistry.addName(bootsAtlanteum, "Atlanteum Boots");
+		GameRegistry.registerItem(bootsAtlanteum, "bootsAtlanteum");
 	
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.scepter)," xx"," sx","s  ",'x',Item.diamond,'s',Item.blazeRod);
         GameRegistry.addRecipe(new ItemStack(Item.dyePowder, 2, 15),"x",'x',AtlantisMod.fishHead);
@@ -375,6 +400,11 @@ public class AtlantisMod {
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.scubaSuit),"x x","xsx","xxx",'x',Item.leather,'s',Item.ingotIron);
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.oxygenTank),"xxx","xbx","xxx",'x',Item.ingotIron,'b',Item.glassBottle);
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.flippers),"x x","x x",'x',Block.waterlily);
+		
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.helmetAtlanteum),"xxx","x x",'x',AtlantisMod.atlanteum);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.chestAtlanteum),"x x","xxx","xxx",'x',AtlantisMod.atlanteum);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.legsAtlanteum),"xxx","x x","x x",'x',AtlantisMod.atlanteum);
+		GameRegistry.addRecipe(new ItemStack(AtlantisMod.bootsAtlanteum),"x x","x x",'x',AtlantisMod.atlanteum);
 
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabAtlantis","en_US","Atlantis Mod");
 	}

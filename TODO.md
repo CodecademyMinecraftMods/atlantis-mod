@@ -30,7 +30,6 @@ TODO
 **Blocks**
  - Bubble Door
  - Seaweed
- - Pebble
 
 **Items**
  - Finish Trident
@@ -49,9 +48,9 @@ TODO
 **Bosses**
  - King of Atlantis
  - Neptune
+ - Finish Kraken
 
 **Other**
- - Trenches [Claimed by @Graeme22]
  - Mob Spawners
  - Mod Website
  - Neptune energy
