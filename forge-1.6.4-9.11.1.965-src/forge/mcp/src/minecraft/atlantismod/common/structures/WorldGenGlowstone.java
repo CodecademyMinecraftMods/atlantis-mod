@@ -15,12 +15,7 @@ public class WorldGenGlowstone extends WorldGenerator {
 		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
 		j++;
 		if(LocationIsValidSpawn(world, i, j, k)) {
-			world.setBlock(i + 0, j + 0, k + 1, Block.glowStone.blockID);
-			world.setBlock(i + 1, j + 0, k + 0, Block.glowStone.blockID);
-			world.setBlock(i + 1, j + 0, k + 1, Block.glowStone.blockID);
-			world.setBlock(i + 1, j + 0, k + 2, Block.glowStone.blockID);
-			world.setBlock(i + 1, j + 1, k + 1, Block.glowStone.blockID);
-			world.setBlock(i + 2, j + 0, k + 1, Block.glowStone.blockID);
+			world.setBlock(i, j, k, Block.glowStone.blockID);
 			return true;
 		}
 		return false;

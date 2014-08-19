@@ -21,6 +21,7 @@ import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenOcean;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.EnumHelper;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,7 +32,6 @@ import atlantismod.common.block.BlockCoral;
 import atlantismod.common.block.BlockRottenPlanks;
 import atlantismod.common.dimension.BiomeGenAtlantisOcean;
 import atlantismod.common.dimension.BiomeGenCoralReef;
-import atlantismod.common.dimension.BiomeGenDeepOcean;
 import atlantismod.common.dimension.WorldGenAtlantis;
 import atlantismod.common.dimension.WorldProviderAtlantis;
 import atlantismod.common.entity.base.EntityAnglerFish;
@@ -46,10 +46,10 @@ import atlantismod.common.entity.base.EntityShark;
 import atlantismod.common.entity.base.EntitySharkman;
 import atlantismod.common.entity.base.EntitySquidman;
 import atlantismod.common.entity.base.EntityWhale;
+import atlantismod.common.item.ItemAtlanteumArmor;
 import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
-import atlantismod.common.item.ItemAtlanteumArmor;
 import atlantismod.common.item.ItemNecklaceArmor;
 import atlantismod.common.item.ItemTrident;
 import atlantismod.common.playerapi.AtlantisClientPlayerBase;
@@ -194,7 +194,7 @@ public class AtlantisMod {
 		
 		atlantisOcean = (new BiomeGenAtlantisOcean(22)).setBiomeName("Atlantean Ocean").setMinMaxHeight(-1.9F, 0.1F);
 		coralReef = (new BiomeGenCoralReef(23)).setBiomeName("Coral Reef").setMinMaxHeight(-1.9F, 0.1F);
-		deepOcean = (new BiomeGenDeepOcean(24)).setBiomeName("Deepest Ocean").setMinMaxHeight(-2.0F, 0.1F);
+		deepOcean = (new BiomeGenOcean(24)).setBiomeName("Deepest Ocean").setMinMaxHeight(-2.0F, 0.1F);
 		darkOcean = (new BiomeGenTheDeep(25)).setBiomeName("Dark Ocean").setMinMaxHeight(-1.9F, 0.1F);
 		
 		biomes = new BiomeGenBase[]{AtlantisMod.atlantisOcean,AtlantisMod.coralReef,AtlantisMod.deepOcean};

@@ -28,7 +28,6 @@ TODO
  - Seacreeper
 
 **Blocks**
- - Bubble Door
  - Seaweed
 
 **Items**
@@ -38,7 +37,6 @@ TODO
  - Lots of kinds of meat
 
 **Structures**
- - Finish Atlantis City
  - Grotto
  - Sunken Submarine
  - Atlantean Ruins
@@ -51,7 +49,6 @@ TODO
  - Finish Kraken
 
 **Other**
- - Mob Spawners
  - Mod Website
  - Neptune energy
 

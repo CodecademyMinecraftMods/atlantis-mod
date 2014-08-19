@@ -40,10 +40,10 @@ public class WorldGenAtlantis implements IWorldGenerator {
 		for(int k=0;k<2;k++) (new WorldGenMinable(AtlantisMod.oreAtlanteum.blockID,7)).generate(world,random,i + random.nextInt(16),random.nextInt(16),j + random.nextInt(16));
 		for(int k=0;k<9;k++) (new WorldGenMinable(AtlantisMod.pebble.blockID,20,AtlantisMod.deepSandBlock.blockID)).generate(world,random,i + random.nextInt(16),random.nextInt(64),j + random.nextInt(16));		
 		if(random.nextInt(500) == 1) (new WorldGenShipwreck()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
-		for(int x=0;x<=2;x++) (new WorldGenGlowstone()).generate(world, random, i + random.nextInt(15), 55, j + random.nextInt(15));
+		for(int x=0;x<=4;x++) (new WorldGenGlowstone()).generate(world, random, i + random.nextInt(15), 55, j + random.nextInt(15));
 		for(int x=0;x<=6;x++) (new WorldGenBubble2()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
 		(new WorldGenBubble3()).generate(world, random, i + random.nextInt(15), random.nextInt(60), j + random.nextInt(15));
-		if(random.nextInt(600) == 1) (new WorldGenAtlantisCity()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
+		if(random.nextInt(1000) == 1) (new WorldGenAtlantisCity()).generate(world, random, i + random.nextInt(15), 60, j + random.nextInt(15));
 	}
 	
 	private void generateTheDeep(World world, Random random, int i, int j) {
