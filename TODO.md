@@ -28,7 +28,7 @@ TODO
  - Seacreeper
 
 **Blocks**
- - Seaweed
+ - Seaweed [Claimed by: LatentLeprechaun]
 
 **Items**
  - Finish Trident
