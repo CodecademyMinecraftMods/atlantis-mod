@@ -17,6 +17,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.item.ItemReed;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -30,6 +31,7 @@ import api.player.server.ServerPlayerAPI;
 import atlantismod.common.block.BlockAtlantisPortal;
 import atlantismod.common.block.BlockCoral;
 import atlantismod.common.block.BlockRottenPlanks;
+import atlantismod.common.block.BlockSeaweed;
 import atlantismod.common.dimension.BiomeGenAtlantisOcean;
 import atlantismod.common.dimension.BiomeGenCoralReef;
 import atlantismod.common.dimension.WorldGenAtlantis;
@@ -51,6 +53,7 @@ import atlantismod.common.item.ItemAtlantisEye;
 import atlantismod.common.item.ItemAtlantisWand;
 import atlantismod.common.item.ItemDivingArmor;
 import atlantismod.common.item.ItemNecklaceArmor;
+import atlantismod.common.item.ItemSeaweed;
 import atlantismod.common.item.ItemTrident;
 import atlantismod.common.playerapi.AtlantisClientPlayerBase;
 import atlantismod.common.playerapi.AtlantisServerPlayerBase;
@@ -108,11 +111,11 @@ public class AtlantisMod {
 
 	public static Block portalAtlantisBlock;
 
-	public static Block deepSandBlock, blockRottenPlanks;
+	public static Block deepSandBlock, blockRottenPlanks, blockSeaweed;
 
 	public static Item pearl, atlantisWand, trident, atlantisEye, scepter, necklace;
 	
-	public static Item fishHead;
+	public static Item fishHead, seaweedItem;
 	
 	public static Item swordPearl, pickaxePearl, shovelPearl, hoePearl, axePearl;
 	
@@ -145,6 +148,7 @@ public class AtlantisMod {
 		
 		deepSandBlock = (new BlockSand(203)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
 		blockRottenPlanks = (new BlockRottenPlanks(2223)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
+		blockSeaweed = (new BlockSeaweed(2245)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("seaweed").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:seaweed");
 		
 		pearl = (new Item(2224)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2225)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
@@ -152,6 +156,7 @@ public class AtlantisMod {
 		atlantisEye = (new ItemAtlantisEye(2227,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
 		scepter = (new Item(2228)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
 		necklace = (ItemNecklaceArmor)(new ItemNecklaceArmor(2229,AtlantisMod.NecklaceArmor,0,1)).setUnlocalizedName("necklace").setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
+		seaweedItem = (new ItemSeaweed(2259, AtlantisMod.blockSeaweed)).setUnlocalizedName("seaweedItem").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:seaweed_item");
 		
 		fishHead = (new Item(2230)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head");
 		
@@ -291,6 +296,9 @@ public class AtlantisMod {
 		
 		LanguageRegistry.addName(necklace, "Atlantis Necklace");
 		GameRegistry.registerItem(necklace, "necklace");
+		
+		LanguageRegistry.addName(seaweedItem, "Seaweed");
+		GameRegistry.registerItem(seaweedItem, "seaweedItem");
 
 		LanguageRegistry.addName(blockRottenPlanks, "Rotten Planks");
 		MinecraftForge.setBlockHarvestLevel(blockRottenPlanks, "axe", 1);
@@ -299,6 +307,9 @@ public class AtlantisMod {
 		LanguageRegistry.addName(deepSandBlock,"Deep Sand");
 		MinecraftForge.setBlockHarvestLevel(deepSandBlock, "shovel", 1);
 		GameRegistry.registerBlock(deepSandBlock,"deepSandBlock");
+		
+		LanguageRegistry.addName(blockSeaweed, "Seaweed");
+		GameRegistry.registerBlock(blockSeaweed, "seaweed");
 		
 		LanguageRegistry.addName(atlantisWand,"Atlantis Teleporter");
 		GameRegistry.registerItem(atlantisWand,"atlantisWand");
