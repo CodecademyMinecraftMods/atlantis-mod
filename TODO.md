@@ -51,6 +51,7 @@ TODO
 **Other**
  - Mod Website
  - Neptune energy
+ - Something for door of Atlantis City
 
 **Future Versions**
  - Update to 1.7 followed by 1.8
