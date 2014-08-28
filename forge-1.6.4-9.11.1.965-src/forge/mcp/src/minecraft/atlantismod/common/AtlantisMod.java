@@ -17,7 +17,6 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.item.ItemHoe;
 import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemReed;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
@@ -148,7 +147,7 @@ public class AtlantisMod {
 		
 		deepSandBlock = (new BlockSand(203)).setHardness(0.5F).setStepSound(Block.soundSandFootstep).setUnlocalizedName("deepSand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:deep_sand");
 		blockRottenPlanks = (new BlockRottenPlanks(2223)).setHardness(1.5F).setStepSound(Block.soundWoodFootstep).setUnlocalizedName("rottenPlanks").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:rotten_planks");
-		blockSeaweed = (new BlockSeaweed(2245)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("seaweed").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:seaweed");
+		blockSeaweed = (new BlockSeaweed(2300)).setHardness(0.0F).setStepSound(Block.soundGrassFootstep).setUnlocalizedName("blockSeaweed").setTextureName("atlantismod:seaweed");
 		
 		pearl = (new Item(2224)).setUnlocalizedName("pearl").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:pearl");
 		atlantisWand = (ItemAtlantisWand)(new ItemAtlantisWand(2225)).setUnlocalizedName("atlantisWand").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:portal_wand").setMaxStackSize(1);
@@ -156,7 +155,7 @@ public class AtlantisMod {
 		atlantisEye = (new ItemAtlantisEye(2227,2,1.2F,false)).setAlwaysEdible().setUnlocalizedName("atlantisEye").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:atlantis_eye").setMaxStackSize(16);
 		scepter = (new Item(2228)).setUnlocalizedName("scepter").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:scepter").setMaxStackSize(1);
 		necklace = (ItemNecklaceArmor)(new ItemNecklaceArmor(2229,AtlantisMod.NecklaceArmor,0,1)).setUnlocalizedName("necklace").setMaxDamage(10000).setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:necklace").setMaxStackSize(1);
-		seaweedItem = (new ItemSeaweed(2259, AtlantisMod.blockSeaweed)).setUnlocalizedName("seaweedItem").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:seaweed_item");
+		seaweedItem = (new ItemSeaweed(2259,AtlantisMod.blockSeaweed)).setUnlocalizedName("seaweedItem").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:seaweed_item");
 		
 		fishHead = (new Item(2230)).setUnlocalizedName("fishHead").setCreativeTab(AtlantisMod.tabAtlantis).setTextureName("atlantismod:fish_head");
 		
