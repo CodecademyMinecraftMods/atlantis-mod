@@ -26,7 +26,6 @@ public class BlockSeaweed extends Block implements IPlantable {
         return false;
     }
 	
-    //This method is not yet finished. Seaweed should grow out as well as up.
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random) {
         if (par1World.getBlockMaterial(par2, par3 + 1, par4) == Material.water) {
             int l;

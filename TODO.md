@@ -27,9 +27,6 @@ TODO
  - Jellyfish
  - Seacreeper
 
-**Blocks**
- - Seaweed [Claimed by: LatentLeprechaun]
-
 **Items**
  - Finish Trident
  - Shark Teeth
@@ -52,6 +49,7 @@ TODO
  - Mod Website
  - Neptune energy
  - Something for door of Atlantis City [Claimed by: LatentLeprechaun]
+ - Make coral into a plant?
 
 **Future Versions**
  - Update to 1.7 followed by 1.8
