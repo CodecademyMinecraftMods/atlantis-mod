@@ -1,0 +1,5 @@
+entity.atlantismod.Giant Squid.name=Giant Squid
+
+tile.portalAtlantisBlock.name=Atlantis Portal Block
+
+item.fishHead.name=Fish Head
