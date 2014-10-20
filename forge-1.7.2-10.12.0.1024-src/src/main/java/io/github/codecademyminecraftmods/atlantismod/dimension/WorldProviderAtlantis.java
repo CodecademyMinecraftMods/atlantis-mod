@@ -1,9 +1,7 @@
-package atlantismod.common.dimension;
+package io.github.codecademyminecraftmods.atlantismod.dimension;
 
-import java.util.ArrayList;
-import atlantismod.common.AtlantisMod;
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.world.WorldProvider;
-import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.IChunkProvider;
 
 public class WorldProviderAtlantis extends WorldProvider {

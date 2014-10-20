@@ -1,4 +1,6 @@
-package atlantismod.common.dimension;
+package io.github.codecademyminecraftmods.atlantismod.dimension;
+
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,6 @@ import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
-import atlantismod.common.AtlantisMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -67,7 +68,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 	
 		for (int i1 = 0; i1 < par4 * par5; ++i1)
 		{
-			float f = (float) BiomeGenBase.biomeList[aint[i1]].getIntRainfall() / 65536.0F;
+			float f = (float) BiomeGenBase.getBiomeGenArray()[aint[i1]].getIntRainfall() / 65536.0F;
 	
 			if (f > 1.0F) {
 				f = 1.0F;
@@ -98,7 +99,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 		
 		for (int i1 = 0; i1 < par4 * par5; ++i1)
 		{
-			float f = (float) BiomeGenBase.biomeList[aint[i1]].getIntTemperature() / 65536.0F;
+			float f = (float) ((int)BiomeGenBase.getBiomeGenArray()[aint[i1]].temperature) / 65536.0F;
 		
 			if (f > 1.0F) {
 				f = 1.0F;
@@ -122,7 +123,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 	
 		for (int i = 0; i < par4 * par5; ++i) {
 			if (aint[i] >= 0) {
-				par1ArrayOfBiomeGenBase[i] = BiomeGenBase.biomeList[aint[i]];
+				par1ArrayOfBiomeGenBase[i] = BiomeGenBase.getBiomeGenArray()[aint[i]];
 			} else {
 				par1ArrayOfBiomeGenBase[i] = AtlantisMod.atlantisOcean;
 			}
@@ -153,7 +154,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 
 			for (int i = 0; i < width * length; ++i) {
 				if (aint[i] >= 0) {
-					par1ArrayOfBiomeGenBase[i] = BiomeGenBase.biomeList[aint[i]];
+					par1ArrayOfBiomeGenBase[i] = BiomeGenBase.getBiomeGenArray()[aint[i]];
 				} else {
 					par1ArrayOfBiomeGenBase[i] = AtlantisMod.atlantisOcean;
 				}
@@ -175,7 +176,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 		int[] aint = this.myGenBiomes.getInts(l, i1, l1, i2);
 
 		for (int j2 = 0; j2 < l1 * i2; ++j2) {
-			BiomeGenBase biomegenbase = BiomeGenBase.biomeList[aint[j2]];
+			BiomeGenBase biomegenbase = BiomeGenBase.getBiomeGenArray()[aint[j2]];
 
 			if (!par4List.contains(biomegenbase)) {
 				return false;
@@ -201,7 +202,7 @@ public class WorldChunkManagerAtlantis extends WorldChunkManager {
 		for (int k2 = 0; k2 < l1 * i2; ++k2) {
 			int l2 = l + k2 % l1 << 2;
 			int i3 = i1 + k2 / l1 << 2;
-			BiomeGenBase biomegenbase = BiomeGenBase.biomeList[aint[k2]];
+			BiomeGenBase biomegenbase = BiomeGenBase.getBiomeGenArray()[aint[k2]];
 
 			if (par4List.contains(biomegenbase) && (chunkposition == null || par5Random.nextInt(j2 + 1) == 0)) {
 				chunkposition = new ChunkPosition(l2, 0, i3);

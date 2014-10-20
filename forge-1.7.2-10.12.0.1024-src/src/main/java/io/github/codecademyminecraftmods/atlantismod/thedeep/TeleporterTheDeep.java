@@ -1,18 +1,18 @@
-package atlantismod.common.thedeep;
+package io.github.codecademyminecraftmods.atlantismod.thedeep;
+
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import atlantismod.common.AtlantisMod;
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
-import net.minecraft.world.PortalPosition;
 import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
@@ -69,7 +69,7 @@ public class TeleporterTheDeep extends Teleporter {
                         int l1 = j + j1;
                         int i2 = k + i1 * b1 - l * b0;
                         boolean flag = j1 < 0;
-                        this.worldServerInstance.setBlock(k1, l1, i2, flag ? 0 : 0);
+                        this.worldServerInstance.setBlock(k1, l1, i2, Blocks.air);
                     }
                 }
             }
@@ -118,9 +118,9 @@ public class TeleporterTheDeep extends Teleporter {
 
                     for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2)
                     {
-                        if (this.worldServerInstance.getBlockId(k1, i2, l1) == AtlantisMod.portalAtlantisBlock.blockID)
+                        if (this.worldServerInstance.getBlock(k1, i2, l1) == AtlantisMod.portalAtlantisBlock)
                         {
-                            while (this.worldServerInstance.getBlockId(k1, i2 - 1, l1) == AtlantisMod.portalAtlantisBlock.blockID)
+                            while (this.worldServerInstance.getBlock(k1, i2 - 1, l1) == AtlantisMod.portalAtlantisBlock)
                             {
                                 --i2;
                             }
@@ -145,7 +145,7 @@ public class TeleporterTheDeep extends Teleporter {
         {
             if (flag)
             {
-                this.destinationCoordinateCache.add(j1, new PortalPosition(this, i, j, k, this.worldServerInstance.getTotalWorldTime()));
+                this.destinationCoordinateCache.add(j1, new PortalPosition(i, j, k, this.worldServerInstance.getTotalWorldTime()));
                 this.destinationCoordinateKeys.add(Long.valueOf(j1));
             }
 
@@ -154,22 +154,22 @@ public class TeleporterTheDeep extends Teleporter {
             d4 = (double)k + 0.5D;
             int j2 = -1;
 
-            if (this.worldServerInstance.getBlockId(i - 1, j, k) == AtlantisMod.portalAtlantisBlock.blockID)
+            if (this.worldServerInstance.getBlock(i - 1, j, k) == AtlantisMod.portalAtlantisBlock)
             {
                 j2 = 2;
             }
 
-            if (this.worldServerInstance.getBlockId(i + 1, j, k) == AtlantisMod.portalAtlantisBlock.blockID)
+            if (this.worldServerInstance.getBlock(i + 1, j, k) == AtlantisMod.portalAtlantisBlock)
             {
                 j2 = 0;
             }
 
-            if (this.worldServerInstance.getBlockId(i, j, k - 1) == AtlantisMod.portalAtlantisBlock.blockID)
+            if (this.worldServerInstance.getBlock(i, j, k - 1) == AtlantisMod.portalAtlantisBlock)
             {
                 j2 = 3;
             }
 
-            if (this.worldServerInstance.getBlockId(i, j, k + 1) == AtlantisMod.portalAtlantisBlock.blockID)
+            if (this.worldServerInstance.getBlock(i, j, k + 1) == AtlantisMod.portalAtlantisBlock)
             {
                 j2 = 1;
             }
@@ -333,7 +333,7 @@ public class TeleporterTheDeep extends Teleporter {
                                         j4 = k2 + l3;
                                         int l4 = j2 + (i4 - 1) * k3 - j3 * l2;
 
-                                        if (l3 < 0 && !this.worldServerInstance.getBlockMaterial(k4, j4, l4).isSolid() || l3 >= 0 && !this.worldServerInstance.isAirBlock(k4, j4, l4))
+                                        if (l3 < 0 && !this.worldServerInstance.getBlock(k4, j4, l4).getMaterial().isSolid() || l3 >= 0 && !this.worldServerInstance.isAirBlock(k4, j4, l4))
                                         {
                                             continue label274;
                                         }
@@ -391,7 +391,7 @@ public class TeleporterTheDeep extends Teleporter {
                                         k4 = k2 + i4;
                                         j4 = j2 + (j3 - 1) * k3;
 
-                                        if (i4 < 0 && !this.worldServerInstance.getBlockMaterial(l3, k4, j4).isSolid() || i4 >= 0 && !this.worldServerInstance.isAirBlock(l3, k4, j4))
+                                        if (i4 < 0 && !this.worldServerInstance.getBlock(l3, k4, j4).getMaterial().isSolid() || i4 >= 0 && !this.worldServerInstance.isAirBlock(l3, k4, j4))
                                         {
                                             continue label222;
                                         }
@@ -454,7 +454,7 @@ public class TeleporterTheDeep extends Teleporter {
                         j3 = j5 + l2;
                         i4 = j2 + (i3 - 1) * l5 - k2 * k5;
                         flag = l2 < 0;
-                        this.worldServerInstance.setBlock(k3, j3, i4, flag ? 0 : 0);
+                        this.worldServerInstance.setBlock(k3, j3, i4, Blocks.air);
                     }
                 }
             }
@@ -470,7 +470,7 @@ public class TeleporterTheDeep extends Teleporter {
                     j3 = j5 + l2;
                     i4 = j2 + (i3 - 1) * l5;
                     flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;
-                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? 0 : AtlantisMod.portalAtlantisBlock.blockID, 0, 2);
+                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.air : AtlantisMod.portalAtlantisBlock, 0, 2);
                 }
             }
 
@@ -481,7 +481,7 @@ public class TeleporterTheDeep extends Teleporter {
                     k3 = i5 + (i3 - 1) * k5;
                     j3 = j5 + l2;
                     i4 = j2 + (i3 - 1) * l5;
-                    this.worldServerInstance.notifyBlocksOfNeighborChange(k3, j3, i4, this.worldServerInstance.getBlockId(k3, j3, i4));
+                    this.worldServerInstance.notifyBlocksOfNeighborChange(k3, j3, i4, this.worldServerInstance.getBlock(k3, j3, i4));
                 }
             }
         }

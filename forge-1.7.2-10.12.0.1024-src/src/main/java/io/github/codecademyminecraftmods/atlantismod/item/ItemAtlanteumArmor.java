@@ -7,13 +7,13 @@ import net.minecraft.item.ItemStack;
 
 public class ItemAtlanteumArmor extends ItemArmor {
 
-	public ItemAtlanteumArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
-		super(par1, par2EnumArmorMaterial, par3, par4);
+	public ItemAtlanteumArmor(ArmorMaterial par1ArmorMaterial, int par2, int par3) {
+		super(par1ArmorMaterial, par2, par3);
 	}
 
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
-		if (stack.itemID == AtlantisMod.legsAtlanteum.itemID) return "atlantismod:textures/models/armor/atlanteum_layer_2.png";
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String stype) {
+		if (stack.getItem() == AtlantisMod.legsAtlanteum) return "atlantismod:textures/models/armor/atlanteum_layer_2.png";
 		return "atlantismod:textures/models/armor/atlanteum_layer_1.png";
 	}
 }

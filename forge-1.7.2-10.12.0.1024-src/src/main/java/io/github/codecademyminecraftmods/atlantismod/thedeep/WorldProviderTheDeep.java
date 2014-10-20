@@ -1,9 +1,9 @@
-package atlantismod.common.thedeep;
+package io.github.codecademyminecraftmods.atlantismod.thedeep;
 
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.biome.WorldChunkManagerHell;
 import net.minecraft.world.chunk.IChunkProvider;
-import atlantismod.common.AtlantisMod;
 
 public class WorldProviderTheDeep extends WorldProvider {
 
@@ -13,7 +13,7 @@ public class WorldProviderTheDeep extends WorldProvider {
 	}
 	
 	public void registerWorldChunkManager() {
-		this.worldChunkMgr = new WorldChunkManagerHell(AtlantisMod.darkOcean, 0.0F, 0.0F);
+		this.worldChunkMgr = new WorldChunkManagerHell(AtlantisMod.darkOcean, 0.0F);
 		this.dimensionId = AtlantisMod.dimensionDeepID;
 	}
 	

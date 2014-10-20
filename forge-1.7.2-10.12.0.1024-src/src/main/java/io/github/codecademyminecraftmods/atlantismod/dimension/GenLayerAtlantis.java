@@ -1,4 +1,4 @@
-package atlantismod.common.dimension;
+package io.github.codecademyminecraftmods.atlantismod.dimension;
 
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.GenLayerVoronoiZoom;

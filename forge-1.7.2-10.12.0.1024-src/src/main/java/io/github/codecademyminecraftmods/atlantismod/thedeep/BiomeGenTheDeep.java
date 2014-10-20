@@ -1,14 +1,13 @@
-package atlantismod.common.thedeep;
+package io.github.codecademyminecraftmods.atlantismod.thedeep;
 
-import atlantismod.common.AtlantisMod;
-import net.minecraft.block.Block;
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.world.biome.BiomeGenOcean;
 
 public class BiomeGenTheDeep extends BiomeGenOcean {
 	
 	public BiomeGenTheDeep(int par1) {
 		super(par1);
-		this.fillerBlock = (byte)AtlantisMod.deepSandBlock.blockID;
+		this.fillerBlock = AtlantisMod.deepSandBlock;
 		this.setColor(0);
 	}
 

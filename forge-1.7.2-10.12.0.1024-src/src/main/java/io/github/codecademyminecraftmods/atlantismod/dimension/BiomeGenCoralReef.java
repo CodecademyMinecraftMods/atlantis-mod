@@ -1,14 +1,13 @@
-package atlantismod.common.dimension;
+package io.github.codecademyminecraftmods.atlantismod.dimension;
 
-import atlantismod.common.AtlantisMod;
-import net.minecraft.block.Block;
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.world.biome.BiomeGenOcean;
 
 public class BiomeGenCoralReef extends BiomeGenOcean {
 	
 	public BiomeGenCoralReef(int par1) {
 		super(par1);
-		this.fillerBlock = (byte)AtlantisMod.blockCoralRed.blockID;
+		this.fillerBlock = AtlantisMod.blockCoralRed;
 	}
 
 }

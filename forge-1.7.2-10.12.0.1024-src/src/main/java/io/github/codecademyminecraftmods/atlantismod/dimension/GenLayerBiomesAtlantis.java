@@ -1,6 +1,6 @@
-package atlantismod.common.dimension;
+package io.github.codecademyminecraftmods.atlantismod.dimension;
 
-import atlantismod.common.AtlantisMod;
+import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;

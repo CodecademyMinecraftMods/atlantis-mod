@@ -1,14 +1,12 @@
-package atlantismod.common.entity.render;
+package io.github.codecademyminecraftmods.atlantismod.entity.render;
 
-import java.util.Random;
-
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityAtlantisFish;
+import io.github.codecademyminecraftmods.atlantismod.entity.model.ModelFish;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
-import atlantismod.common.entity.base.EntityAtlantisFish;
-import atlantismod.common.entity.model.ModelFish;
 
 public class RenderFish extends RenderLiving {
 

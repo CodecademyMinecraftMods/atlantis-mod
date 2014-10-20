@@ -1,4 +1,4 @@
-package atlantismod.common.entity.model;
+package io.github.codecademyminecraftmods.atlantismod.entity.model;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;

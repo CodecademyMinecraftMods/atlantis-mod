@@ -1,15 +1,13 @@
-package atlantismod.common.item;
+package io.github.codecademyminecraftmods.atlantismod.item;
 
-import atlantismod.common.AtlantisMod;
 import net.minecraft.entity.Entity;
-import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 
 public class ItemNecklaceArmor extends ItemArmor {
 
-	public ItemNecklaceArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
-		super(par1, par2EnumArmorMaterial, par3, par4);
+	public ItemNecklaceArmor(ArmorMaterial par1ArmorMaterial, int par2, int par3) {
+		super(par1ArmorMaterial, par2, par3);
 	}
 
 	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
