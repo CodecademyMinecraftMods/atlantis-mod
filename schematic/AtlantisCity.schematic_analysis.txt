@@ -1,0 +1,54 @@
+(0:0),Air,0
+(0:0),Air,64935
+(5:0),Wood Planks,3723
+(9:0),Water,27356
+(20:0),Glass,7578
+(42:0),Block of Iron,16
+(44:15),Stone Slab,88
+(52:0),Monster Spawner,8
+(53:0),Wooden Stairs,18
+(53:1),Wooden Stairs,18
+(53:2),Wooden Stairs,18
+(53:3),Wooden Stairs,18
+(54:2),Chest,6
+(54:3),Chest,6
+(54:4),Chest,6
+(54:5),Chest,6
+(64:0),Wooden Door,7
+(64:1),Wooden Door,8
+(64:2),Wooden Door,8
+(64:3),Wooden Door,8
+(64:4),Wooden Door,1
+(64:8),Wooden Door,17
+(64:9),Wooden Door,15
+(65:2),Ladder,25
+(65:3),Ladder,25
+(65:4),Ladder,25
+(65:5),Ladder,25
+(85:0),Fence,710
+(89:0),Glowstone,734
+(96:8),Trapdoor,2
+(96:9),Trapdoor,2
+(96:10),Trapdoor,2
+(96:11),Trapdoor,2
+(102:0),Glass Pane,280
+(138:0),Beacon Block,4
+(148:0),Weighted Pressure Plate (Heavy),8
+(155:0),Block of Quartz,700
+(155:1),Block of Quartz,452
+(155:2),Block of Quartz,308
+(155:3),Block of Quartz,215
+(155:4),Block of Quartz,233
+(156:0),Quartz Stairs,46
+(156:1),Quartz Stairs,46
+(156:2),Quartz Stairs,46
+(156:3),Quartz Stairs,46
+(156:4),Quartz Stairs,50
+(156:5),Quartz Stairs,50
+(156:6),Quartz Stairs,50
+(156:7),Quartz Stairs,50
+,,
+,<TileEntities>,36
+Beacon,Beacon,4
+Chest,Chest,24
+MobSpawner,MobSpawner,8

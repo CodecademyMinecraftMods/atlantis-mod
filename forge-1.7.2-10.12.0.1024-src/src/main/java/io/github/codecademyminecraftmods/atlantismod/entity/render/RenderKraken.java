@@ -1,12 +1,11 @@
-package atlantismod.common.entity.render;
+package io.github.codecademyminecraftmods.atlantismod.entity.render;
 
-import atlantismod.common.entity.base.EntityKraken;
-import atlantismod.common.entity.model.ModelKraken;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityKraken;
+import io.github.codecademyminecraftmods.atlantismod.entity.model.ModelKraken;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderKraken extends RenderLiving {
@@ -24,7 +23,7 @@ public class RenderKraken extends RenderLiving {
 	}
     
 	public void renderKraken(EntityKraken entity, double par2, double par4, double par6, float par8, float par9) {
-        super.doRenderLiving(entity, par2, par4, par6, par8, par9);
+        super.doRender(entity, par2, par4, par6, par8, par9);
     }
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {

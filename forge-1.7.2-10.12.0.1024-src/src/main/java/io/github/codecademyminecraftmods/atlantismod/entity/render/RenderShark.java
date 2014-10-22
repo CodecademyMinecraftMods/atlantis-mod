@@ -1,12 +1,12 @@
-package atlantismod.common.entity.render;
+package io.github.codecademyminecraftmods.atlantismod.entity.render;
 
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityShark;
+import io.github.codecademyminecraftmods.atlantismod.entity.model.ModelShark;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.ResourceLocation;
-import atlantismod.common.entity.base.EntityShark;
-import atlantismod.common.entity.model.ModelShark;
 
 public class RenderShark extends RenderLiving {
 
@@ -23,7 +23,7 @@ public class RenderShark extends RenderLiving {
 	}
 	
 	public void renderShark(EntityShark entity, double par2, double par4, double par6, float par8, float par9) {
-        super.doRenderLiving(entity, par2, par4, par6, par8, par9);
+        super.doRender(entity, par2, par4, par6, par8, par9);
     }
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {

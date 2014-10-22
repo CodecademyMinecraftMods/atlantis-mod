@@ -32,7 +32,7 @@ public class RenderFish extends RenderLiving {
 	}
 	
 	public void renderFish(EntityAtlantisFish entity, double par2, double par4, double par6, float par8, float par9) {
-        super.doRenderLiving(entity, par2, par4, par6, par8, par9);
+        super.doRender(entity, par2, par4, par6, par8, par9);
     }
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {

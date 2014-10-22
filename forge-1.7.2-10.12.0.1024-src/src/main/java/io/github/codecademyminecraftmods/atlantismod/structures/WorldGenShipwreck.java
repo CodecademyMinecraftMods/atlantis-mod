@@ -16,8 +16,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 
 	@Override
 	public boolean generate(World world, Random rand, int i, int j, int k) {
-		while(LocationIsValidSpawn(world, i, j, k) && j > 0) j--;
-		j++;
+		while(LocationIsValidSpawn(world, i, j, k) && j > 1) j--;
 		if(LocationIsValidSpawn(world, i, j, k) && LocationIsValidSpawn(world, i, j + 14, k)) {
 			
 			world.setBlock(i + 0, j + 2, k + 14, Blocks.fence);

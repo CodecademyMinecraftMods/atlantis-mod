@@ -71,6 +71,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 /**
  * 
@@ -89,7 +90,7 @@ public class AtlantisMod {
 	
 	@Instance(value=AtlantisMod.modid)
 	public static AtlantisMod instance;
-	@SidedProxy(clientSide="atlantismod.common.client.ClientProxy",serverSide="atlantismod.common.CommonProxy")
+	@SidedProxy(clientSide="io.github.codecademyminecraftmods.atlantismod.client.ClientProxy",serverSide="io.github.codecademyminecraftmods.atlantismod.CommonProxy")
     public static CommonProxy proxy;
 	
 	public static final int dimensionID = 22;
@@ -377,18 +378,12 @@ public class AtlantisMod {
 		//LanguageRegistry.addName(flippers, "Flippers");
 		GameRegistry.registerItem(flippers, "flippers");
 		
-		//LanguageRegistry.addName(helmetAtlanteum, "Atlanteum Helmet");
 		GameRegistry.registerItem(helmetAtlanteum, "helmetAtlanteum");
-		//LanguageRegistry.addName(chestAtlanteum, "Atlanteum Chestplate");
 		GameRegistry.registerItem(chestAtlanteum, "chestAtlanteum");
-		//LanguageRegistry.addName(legsAtlanteum, "Atlanteum Leggings");
 		GameRegistry.registerItem(legsAtlanteum, "legsAtlanteum");
-		//LanguageRegistry.addName(bootsAtlanteum, "Atlanteum Boots");
 		GameRegistry.registerItem(bootsAtlanteum, "bootsAtlanteum");
 		
 		AtlantisCrafting.loadRecipes();
-
-		//LanguageRegistry.instance().addStringLocalization("itemGroup.tabAtlantis","en_US","Atlantis Mod");
 	}
 	
 	@EventHandler

@@ -1,0 +1,63 @@
+(0:0),Air,0
+(0:0),Air,68574
+(0:1),Air,132
+(0:2),Air,118
+(0:3),Air,100
+(0:4),Air,86
+(0:5),Air,19
+(0:6),Air,18
+(0:7),Air,13
+(0:8),Air,12
+(0:9),Air,9
+(0:11),Air,1
+(0:15),Air,23
+(1:0),Stone,12
+(3:0),Dirt,548
+(4:0),Cobblestone,515
+(4:1),Cobblestone,337
+(4:2),Cobblestone,226
+(4:3),Cobblestone,150
+(4:4),Cobblestone,174
+(5:0),Wood Planks,2768
+(5:1),Wood Planks,3
+(5:2),Wood Planks,3
+(5:3),Wood Planks,4
+(5:8),Wood Planks,6
+(5:9),Wood Planks,7
+(9:0),Water,27356
+(20:0),Glass,5662
+(44:15),Stone Slab,65
+(52:0),Monster Spawner,8
+(53:0),Wooden Stairs,13
+(53:1),Wooden Stairs,16
+(53:2),Wooden Stairs,12
+(53:3),Wooden Stairs,15
+(54:2),Chest,3
+(54:3),Chest,3
+(54:4),Chest,4
+(54:5),Chest,4
+(67:0),Stone Stairs,32
+(67:1),Stone Stairs,36
+(67:2),Stone Stairs,33
+(67:3),Stone Stairs,34
+(67:4),Stone Stairs,33
+(67:5),Stone Stairs,44
+(67:6),Stone Stairs,32
+(67:7),Stone Stairs,37
+(70:0),Stone Pressure Plate,6
+(96:8),Trapdoor,1
+(96:9),Trapdoor,1
+(96:10),Trapdoor,2
+(96:11),Trapdoor,1
+(102:0),Glass Pane,197
+(106:2),Vines,16
+(106:3),Vines,12
+(106:4),Vines,18
+(106:5),Vines,14
+(113:0),Nether Fence,431
+(138:0),Beacon Block,1
+,,
+,<TileEntities>,36
+Beacon,Beacon,4
+Chest,Chest,24
+MobSpawner,MobSpawner,8

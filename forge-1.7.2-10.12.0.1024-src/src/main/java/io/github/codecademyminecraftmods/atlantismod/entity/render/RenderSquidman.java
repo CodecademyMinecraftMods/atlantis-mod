@@ -1,13 +1,11 @@
-package atlantismod.common.entity.render;
+package io.github.codecademyminecraftmods.atlantismod.entity.render;
 
-import atlantismod.common.entity.base.EntitySquidman;
-import atlantismod.common.entity.model.ModelSquidman;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntitySquidman;
+import io.github.codecademyminecraftmods.atlantismod.entity.model.ModelSquidman;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.EntitySquid;
 import net.minecraft.util.ResourceLocation;
 
 public class RenderSquidman extends RenderLiving {
@@ -25,7 +23,7 @@ public class RenderSquidman extends RenderLiving {
 	}
     
 	public void renderSquidman(EntitySquidman entity, double par2, double par4, double par6, float par8, float par9) {
-        super.doRenderLiving(entity, par2, par4, par6, par8, par9);
+        super.doRender(entity, par2, par4, par6, par8, par9);
     }
 
 	public void doRenderLiving(EntityLiving par1EntityLiving, double par2, double par4, double par6, float par8, float par9) {
