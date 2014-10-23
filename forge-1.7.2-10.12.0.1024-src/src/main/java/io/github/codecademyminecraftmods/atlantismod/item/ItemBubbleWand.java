@@ -14,45 +14,8 @@ import net.minecraft.world.World;
 
 public class ItemBubbleWand extends Item {
 
-	public boolean generate(World world, int i, int j, int k) {
-
-			world.setBlockWithoutNotify(i + -1, j + -1, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + -1, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + -1, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 0, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 0, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 0, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 2, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 2, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + -1, j + 2, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + -1, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + -1, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + -1, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 0, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 0, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 0, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 1, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 1, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 0, j + 1, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + -1, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + -1, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + -1, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 0, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 0, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 0, k + 1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 1, k + -1, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 1, k + 0, Blocks.air, 0, 0);
-			world.setBlockWithoutNotify(i + 1, j + 1, k + 1, Blocks.air, 0, 0);
-
-			return true;
-
-	}
-
 	public boolean onItemUse(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, World par3World) {
-		
-		generate(par1world, par2, par3, par4);
-
-		return false;
+		return (new WorldGenBubble2()).generate(par3World, new Random(), par2EntityPlayer.posX, par2EntityPlayer.posY, par2EntityPlayer.posZ);
 	}
 
 }
