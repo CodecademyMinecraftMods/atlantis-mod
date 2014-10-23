@@ -38,7 +38,6 @@ TODO
 **Structures**
  - Grotto
  - Sunken Submarine
- - Atlantean Ruins
  - Finish Overworld Shrine
  - Atlantis Shrine
 
@@ -48,10 +47,9 @@ TODO
  - Finish Kraken
 
 **Other**
+ - Custom Mob Spawners
  - Mod Website
- - Neptune energy
  - Something for door of Atlantis City [Claimed by: LatentLeprechaun]
- - Make coral into a plant?
 
 **Future Versions**
  - Update to 1.8

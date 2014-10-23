@@ -118,9 +118,9 @@ public class TeleporterTheDeep extends Teleporter {
 
                     for (int i2 = this.worldServerInstance.getActualHeight() - 1; i2 >= 0; --i2)
                     {
-                        if (this.worldServerInstance.getBlock(k1, i2, l1) == AtlantisMod.portalAtlantisBlock)
+                        if (this.worldServerInstance.getBlock(k1, i2, l1) == AtlantisMod.blockAtlantisPortal)
                         {
-                            while (this.worldServerInstance.getBlock(k1, i2 - 1, l1) == AtlantisMod.portalAtlantisBlock)
+                            while (this.worldServerInstance.getBlock(k1, i2 - 1, l1) == AtlantisMod.blockAtlantisPortal)
                             {
                                 --i2;
                             }
@@ -154,22 +154,22 @@ public class TeleporterTheDeep extends Teleporter {
             d4 = (double)k + 0.5D;
             int j2 = -1;
 
-            if (this.worldServerInstance.getBlock(i - 1, j, k) == AtlantisMod.portalAtlantisBlock)
+            if (this.worldServerInstance.getBlock(i - 1, j, k) == AtlantisMod.blockAtlantisPortal)
             {
                 j2 = 2;
             }
 
-            if (this.worldServerInstance.getBlock(i + 1, j, k) == AtlantisMod.portalAtlantisBlock)
+            if (this.worldServerInstance.getBlock(i + 1, j, k) == AtlantisMod.blockAtlantisPortal)
             {
                 j2 = 0;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k - 1) == AtlantisMod.portalAtlantisBlock)
+            if (this.worldServerInstance.getBlock(i, j, k - 1) == AtlantisMod.blockAtlantisPortal)
             {
                 j2 = 3;
             }
 
-            if (this.worldServerInstance.getBlock(i, j, k + 1) == AtlantisMod.portalAtlantisBlock)
+            if (this.worldServerInstance.getBlock(i, j, k + 1) == AtlantisMod.blockAtlantisPortal)
             {
                 j2 = 1;
             }
@@ -470,7 +470,7 @@ public class TeleporterTheDeep extends Teleporter {
                     j3 = j5 + l2;
                     i4 = j2 + (i3 - 1) * l5;
                     flag = i3 == 0 || i3 == 3 || l2 == -1 || l2 == 3;
-                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.air : AtlantisMod.portalAtlantisBlock, 0, 2);
+                    this.worldServerInstance.setBlock(k3, j3, i4, flag ? Blocks.air : AtlantisMod.blockAtlantisPortal, 0, 2);
                 }
             }
 

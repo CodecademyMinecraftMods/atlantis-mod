@@ -10,7 +10,8 @@ public class ItemNecklaceArmor extends ItemArmor {
 		super(par1ArmorMaterial, par2, par3);
 	}
 
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String stype) {
 		return "atlantismod:textures/models/armor/necklace_armor.png";
 	}
 	

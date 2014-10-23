@@ -463,7 +463,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 10, j + 8, k + 15, Blocks.fence);
 			world.setBlock(i + 10, j + 8, k + 19, Blocks.fence);
 			world.setBlock(i + 10, j + 8, k + 20, Blocks.fence);
-			world.setBlock(i + 11, j + 4, k + 28, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 11, j + 4, k + 28, Blocks.vine);
 			world.setBlock(i + 11, j + 7, k + 9, Blocks.fence);
 			world.setBlock(i + 11, j + 7, k + 10, Blocks.fence);
 			world.setBlock(i + 11, j + 7, k + 14, Blocks.fence);
@@ -476,8 +476,8 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 11, j + 8, k + 15, Blocks.fence);
 			world.setBlock(i + 11, j + 8, k + 19, Blocks.fence);
 			world.setBlock(i + 11, j + 8, k + 20, Blocks.fence);
-			world.setBlock(i + 11, j + 13, k + 9, AtlantisMod.blockCoralGreen);
-			world.setBlock(i + 11, j + 14, k + 9, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 11, j + 13, k + 9, Blocks.vine);
+			world.setBlock(i + 11, j + 14, k + 9, Blocks.vine);
 			world.setBlock(i + 12, j + 2, k + 8, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 2, k + 9, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 2, k + 10, AtlantisMod.blockRottenPlanks);
@@ -494,7 +494,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 12, j + 2, k + 21, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 2, k + 22, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 2, k + 23, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 12, j + 2, k + 28, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 12, j + 2, k + 28, Blocks.vine);
 			world.setBlock(i + 12, j + 3, k + 5, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 3, k + 6, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 3, k + 7, AtlantisMod.blockRottenPlanks);
@@ -503,8 +503,8 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 12, j + 3, k + 24, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 3, k + 25, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 3, k + 26, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 12, j + 3, k + 27, AtlantisMod.blockCoralGreen);
-			world.setBlock(i + 12, j + 3, k + 28, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 12, j + 3, k + 27, Blocks.vine);
+			world.setBlock(i + 12, j + 3, k + 28, Blocks.vine);
 			world.setBlock(i + 12, j + 4, k + 3, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 4, k + 4, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 4, k + 5, AtlantisMod.blockRottenPlanks);
@@ -575,8 +575,8 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 12, j + 13, k + 21, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 13, k + 22, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 12, j + 13, k + 23, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 12, j + 14, k + 9, AtlantisMod.blockCoralGreen);
-			world.setBlock(i + 12, j + 14, k + 10, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 12, j + 14, k + 9, Blocks.vine);
+			world.setBlock(i + 12, j + 14, k + 10, Blocks.vine);
 			world.setBlock(i + 13, j + 2, k + 8, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 2, k + 9, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 2, k + 10, AtlantisMod.blockRottenPlanks);
@@ -615,7 +615,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 13, j + 3, k + 24, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 3, k + 25, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 3, k + 26, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 13, j + 3, k + 27, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 13, j + 3, k + 27, Blocks.vine);
 			world.setBlock(i + 13, j + 4, k + 3, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 4, k + 4, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 4, k + 5, AtlantisMod.blockRottenPlanks);
@@ -884,7 +884,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 13, j + 13, k + 21, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 13, k + 22, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 13, j + 13, k + 23, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 13, j + 14, k + 10, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 13, j + 14, k + 10, Blocks.vine);
 			world.setBlock(i + 14, j + 2, k + 8, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 14, j + 2, k + 9, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 14, j + 2, k + 10, AtlantisMod.blockRottenPlanks);
@@ -1056,11 +1056,11 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 16, j + 2, k + 19, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 2, k + 20, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 2, k + 21, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 16, j + 3, k + 3, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 16, j + 3, k + 3, Blocks.vine);
 			world.setBlock(i + 16, j + 3, k + 9, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 3, k + 22, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 16, j + 4, k + 3, AtlantisMod.blockCoralGreen);
-			world.setBlock(i + 16, j + 4, k + 4, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 16, j + 4, k + 3, Blocks.vine);
+			world.setBlock(i + 16, j + 4, k + 4, Blocks.vine);
 			world.setBlock(i + 16, j + 4, k + 6, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 4, k + 7, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 4, k + 8, AtlantisMod.blockRottenPlanks);
@@ -1069,7 +1069,7 @@ public class WorldGenShipwreck extends WorldGenerator {
 			world.setBlock(i + 16, j + 4, k + 23, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 4, k + 24, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 4, k + 25, AtlantisMod.blockRottenPlanks);
-			world.setBlock(i + 16, j + 5, k + 3, AtlantisMod.blockCoralGreen);
+			world.setBlock(i + 16, j + 5, k + 3, Blocks.vine);
 			world.setBlock(i + 16, j + 5, k + 4, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 5, k + 5, AtlantisMod.blockRottenPlanks);
 			world.setBlock(i + 16, j + 5, k + 6, AtlantisMod.blockRottenPlanks);

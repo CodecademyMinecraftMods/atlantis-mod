@@ -1,11 +1,25 @@
 package io.github.codecademyminecraftmods.atlantismod;
 
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityAnglerFish;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityAtlantisFish;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityClam;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityEel;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityElectricEel;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityGiantSquid;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityKraken;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityMermaid;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityShark;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntitySharkman;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntitySquidman;
+import io.github.codecademyminecraftmods.atlantismod.entity.base.EntityWhale;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.EntityRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 
-public class AtlantisCrafting {
+public class AtlantisHandler {
 
 	public static void loadRecipes() {
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.scepter)," xx"," sx","s  ",'x',Items.diamond,'s',Items.blaze_rod);

@@ -11,7 +11,8 @@ public class ItemDivingArmor extends ItemArmor {
 		super(par1ArmorMaterial, par2, par3);
 	}
 
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer) {
+	@Override
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String stype) {
 		if (stack.getItem() == AtlantisMod.oxygenTank) return "atlantismod:textures/models/armor/oxygen_tank.png";
 		return "atlantismod:textures/models/armor/diving_suit.png";
 	}

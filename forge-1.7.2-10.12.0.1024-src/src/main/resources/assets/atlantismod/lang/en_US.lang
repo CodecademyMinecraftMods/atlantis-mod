@@ -11,16 +11,18 @@ entity.atlantismod.Sharkman.name=Sharkman
 entity.atlantismod.Squidman.name=Squidman
 entity.atlantismod.Whale.name=Whale
 
+itemGroup.tabAtlantis=Atlantis Mod
+
 tile.blockAtlanteum.name=Block of Atlanteum
 tile.blockCoralGreen.name=Green Coral
 tile.blockCoralOrange.name=Orange Coral
 tile.blockCoralPurple.name=Purple Coral
 tile.blockCoralRed.name=Red Coral
-tile.blockCoralYello.name=Yellow Coral
+tile.blockCoralYellow.name=Yellow Coral
 tile.blockPearl.name=Block of Pearl
-tile.blockRottenPlanks.name=Rotten Plankes
+tile.rottenPlanks.name=Rotten Planks
 tile.blockSeaweed.name=Seaweed
-tile.deepSandBlock.name=Deep Sand
+tile.blockDeepSand.name=Deep Sand
 tile.oreAtlanteum.name=Atlanteum Ore
 tile.pebble.name=Pebble
 tile.portalAtlantisBlock.name=Atlantis Portal Block
