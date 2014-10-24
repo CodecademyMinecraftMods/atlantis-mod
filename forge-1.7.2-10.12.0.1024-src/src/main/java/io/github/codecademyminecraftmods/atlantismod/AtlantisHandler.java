@@ -24,7 +24,8 @@ public class AtlantisHandler {
 	public static void loadRecipes() {
 		GameRegistry.addRecipe(new ItemStack(AtlantisMod.scepter)," xx"," sx","s  ",'x',Items.diamond,'s',Items.blaze_rod);
         GameRegistry.addRecipe(new ItemStack(Items.dye, 2, 15),"x",'x',AtlantisMod.fishHead);
-        GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand),"  x"," s ","x  ",'x',AtlantisMod.atlantisEye,'s',AtlantisMod.scepter);
+        GameRegistry.addRecipe(new ItemStack(AtlantisMod.atlantisWand)," x","s ",'x',AtlantisMod.atlantisEye,'s',AtlantisMod.scepter);
+        GameRegistry.addRecipe(new ItemStack(AtlantisMod.bubbleWand)," x","s ",'x',Items.glass_bottle,'s',AtlantisMod.scepter);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.blockPearl),"xxx","xxx","xxx",'x',AtlantisMod.pearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.pearl),"x",'x',AtlantisMod.blockPearl);
         GameRegistry.addRecipe(new ItemStack(AtlantisMod.necklace),"ggg","g g"," e ", 'g',Items.gold_ingot, 'e', AtlantisMod.atlantisEye);

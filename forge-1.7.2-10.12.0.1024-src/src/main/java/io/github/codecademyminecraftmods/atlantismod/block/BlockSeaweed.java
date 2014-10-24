@@ -33,7 +33,7 @@ public class BlockSeaweed extends Block implements IPlantable {
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random) {
         if (par1World.getBlock(par2, par3 + 1, par4) == Blocks.water) {
             int l;
-            for (l = 1; par1World.getBlock(par2, par3 - l, par4) == AtlantisMod.blockSeaweed; ++l);
+            for (l = 1; par1World.getBlock(par2, par3 - l, par4) == this; ++l);
             if (l < 3) {
                 int i1 = par1World.getBlockMetadata(par2, par3, par4);
                 if (i1 == 15) {
@@ -47,9 +47,10 @@ public class BlockSeaweed extends Block implements IPlantable {
     }
 
     public boolean canPlaceBlockAt(World par1World, int par2, int par3, int par4) {
-    	boolean isWater = (par1World.getBlock(par2 - 1, par3, par4) == Blocks.water || par1World.getBlock(par2 + 1, par3, par4) == Blocks.water || par1World.getBlock(par2, par3, par4 + 1) == Blocks.water || par1World.getBlock(par2, par3, par4 - 1) == Blocks.water || par1World.getBlock(par2, par3 - 1, par4) == Blocks.water);
+    	if(par1World.getBlock(par2, par3 + 1, par4) != Blocks.water && par1World.getBlock(par2, par3 + 1, par4) != AtlantisMod.blockSeaweed) return false;
+    	boolean isWater = (par1World.getBlock(par2 - 1, par3, par4) == Blocks.water || par1World.getBlock(par2 + 1, par3, par4) == Blocks.water || par1World.getBlock(par2, par3, par4 + 1) == Blocks.water || par1World.getBlock(par2, par3, par4 - 1) == Blocks.water);
         Block block = par1World.getBlock(par2, par3 - 1, par4);
-        return ((block instanceof BlockSand && isWater) || (block == this && isWater));
+        return (((block == AtlantisMod.blockDeepSand || block instanceof BlockSand) && isWater) || (block instanceof BlockSeaweed && isWater));
     }
 
     public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5) {
@@ -57,7 +58,7 @@ public class BlockSeaweed extends Block implements IPlantable {
     }
 
     protected final void checkBlockCoordValid(World par1World, int par2, int par3, int par4) {
-        if (par1World.isAirBlock(par2, par3 - 1, par4)) {
+        if (par1World.isAirBlock(par2, par3 - 1, par4) || par1World.getBlock(par2, par3 - 1, par4) == Blocks.water || par1World.isAirBlock(par2, par3 + 1, par4)) {
             this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
             par1World.setBlockToAir(par2, par3, par4);
         }
@@ -73,7 +74,7 @@ public class BlockSeaweed extends Block implements IPlantable {
 
     @Override
     public Item getItemDropped(int par1, Random par2Random, int par3) {
-        return AtlantisMod.seaweedItem;
+        return AtlantisMod.itemSeaweed;
     }
     
     public boolean isOpaqueCube() {
@@ -91,7 +92,7 @@ public class BlockSeaweed extends Block implements IPlantable {
     @Override
     @SideOnly(Side.CLIENT)
     public Item getItem(World par1World, int par2, int par3, int par4) {
-        return AtlantisMod.seaweedItem;
+        return AtlantisMod.itemSeaweed;
     }
 
 	@Override

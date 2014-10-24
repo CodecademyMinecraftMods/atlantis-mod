@@ -32,8 +32,6 @@ TODO
  - Shark Teeth
  - Triton
  - Lots of kinds of meat
- - Wand focuses used to craft wand rather than crafting directly.
- - Bubble Wand
 
 **Structures**
  - Grotto
