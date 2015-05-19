@@ -1,0 +1,16 @@
+[
+{
+  "modid": "atlantismod",
+  "name": "Atlantis Mod",
+  "description": "An underwater dimension!",
+  "version": "1.2.1 Beta",
+  "mcversion": "1.7.10",
+  "url": "http://codecademyminecraftmods.github.io",
+  "updateUrl": "",
+  "authors": ["Graeme22","ETBCOR","Lepreckaun"],
+  "credits": "Thanks to the makes of PlayerAPI for the awesome tool!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": [""]
+}
+]
