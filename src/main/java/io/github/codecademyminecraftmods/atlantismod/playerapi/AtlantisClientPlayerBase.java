@@ -1,4 +1,4 @@
-package io.github.codecademyminecraftmods.atlantismod.playerapi;
+/*package io.github.codecademyminecraftmods.atlantismod.playerapi;
 
 import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import net.minecraft.block.Block;
@@ -56,4 +56,4 @@ public class AtlantisClientPlayerBase extends ClientPlayerBase {
         return (f < 0 ? 0 : f);
 	}
 	
-}
+}*/

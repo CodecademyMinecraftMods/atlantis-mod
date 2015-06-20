@@ -32,8 +32,8 @@ import io.github.codecademyminecraftmods.atlantismod.item.tool.ItemAtlanteumAxe;
 import io.github.codecademyminecraftmods.atlantismod.item.tool.ItemAtlanteumPickaxe;
 import io.github.codecademyminecraftmods.atlantismod.item.tool.ItemPearlAxe;
 import io.github.codecademyminecraftmods.atlantismod.item.tool.ItemPearlPickaxe;
-import io.github.codecademyminecraftmods.atlantismod.playerapi.AtlantisClientPlayerBase;
-import io.github.codecademyminecraftmods.atlantismod.playerapi.AtlantisServerPlayerBase;
+//import io.github.codecademyminecraftmods.atlantismod.playerapi.AtlantisClientPlayerBase;
+//import io.github.codecademyminecraftmods.atlantismod.playerapi.AtlantisServerPlayerBase;
 import io.github.codecademyminecraftmods.atlantismod.thedeep.BiomeGenTheDeep;
 import io.github.codecademyminecraftmods.atlantismod.thedeep.WorldProviderTheDeep;
 import net.minecraft.block.Block;
@@ -124,10 +124,10 @@ public class AtlantisMod {
 	public static Block blockCoralOrange, blockCoralRed, blockCoralPurple, blockCoralYellow;
 	public static Item itemCoralOrange, itemCoralRed, itemCoralPurple, itemCoralYellow;
 	
-	public AtlantisMod() {
+	/*public AtlantisMod() {
 		ClientPlayerAPI.register("AtlantisMod", AtlantisClientPlayerBase.class);
 		ServerPlayerAPI.register("AtlantisMod", AtlantisServerPlayerBase.class);
-	}
+	}*/
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {

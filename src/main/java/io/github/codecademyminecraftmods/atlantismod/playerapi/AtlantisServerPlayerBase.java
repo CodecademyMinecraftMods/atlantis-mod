@@ -1,4 +1,4 @@
-package io.github.codecademyminecraftmods.atlantismod.playerapi;
+/*package io.github.codecademyminecraftmods.atlantismod.playerapi;
 
 import io.github.codecademyminecraftmods.atlantismod.AtlantisMod;
 import io.github.codecademyminecraftmods.atlantismod.dimension.TeleporterAtlantis;
@@ -96,4 +96,4 @@ public class AtlantisServerPlayerBase extends ServerPlayerBase {
         return (f < 0 ? 0 : f);
 	}
 	
-}
+}*/
